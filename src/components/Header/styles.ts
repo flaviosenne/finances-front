@@ -11,7 +11,7 @@ export const Container = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     background: white;
-    border-bottom: 2pt solid;
+    border-bottom: 2pt solid var(--primary);
     
     @media(max-width: 540px){
         flex-direction: column;

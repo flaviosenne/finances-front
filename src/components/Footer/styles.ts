@@ -4,7 +4,7 @@ import { Github } from '@styled-icons/boxicons-logos/Github'
 import { Linkedin } from '@styled-icons/boxicons-logos/Linkedin'
 
 export const Container = styled.div`
-    border-top: 2pt solid;
+    border-top: 2pt solid var(--primary);
     min-width:  100vw;
     padding: 8px;
     text-align: center;
