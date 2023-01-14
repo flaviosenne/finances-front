@@ -1,24 +1,26 @@
 import styled from 'styled-components'
-import { ArrowRightCircleFill } from '@styled-icons/bootstrap/ArrowRightCircleFill'
 
 interface Props {
     color?: string
+    width?: number
+    height: number
 }
 
 export const Container = styled.div<Props>`
     display: flex;
-    width: 64px;
-    height: 40px;
-    border-radius: 8%;
-    padding: 8px;
+    width: ${props => props.width? props.width+'px': '100%'};
+    height: ${props => props.height+'px'};
     background: ${props => props.color ? props.color : 'var(--primary)'};
     cursor: pointer;
-    transition: padding .4s;
-    &:hover {
-        padding: 6px;
-    }
-`
+    justify-content: center;
+    justify-items: center;
+    margin: 4px auto;
+    padding: 5px;
 
-export const ArrowRightcon = styled(ArrowRightCircleFill)`
-    width: 70px;
+    &:hover{
+        opacity: 0.9;
+    }
+
+
+    
 `

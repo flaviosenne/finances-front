@@ -1,17 +1,21 @@
 import React from 'react'
-import { Container, ArrowRightcon } from './styles'
+import { Container } from './styles'
 
 interface Props {
     title: string
-    isHome?: boolean
-    color: string
+    width?: number
+    height: number
+    color?: string
+    icon?: any
 }
 
-const Button: React.FunctionComponent<Props> = (props: Props) =>{
+const Button: React.FC<Props> = (props: Props) => {
     return (
-        <Container color={props.color}>
-            {props.isHome && <ArrowRightcon />}
-            <span>{props.title}</span>
+        <Container width={props.width} height={props.height} color={props.color}>
+            <span>
+                {props.icon}
+            </span>
+            <p>{props.title}</p>
         </Container>
     )
 }

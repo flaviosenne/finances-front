@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { Menu } from '@styled-icons/material-rounded/Menu'
 import { MenuOpen } from '@styled-icons/material/MenuOpen'
+import { ArrowRightCircleFill } from '@styled-icons/bootstrap/ArrowRightCircleFill'
+
 
 export const Container = styled.div`
     min-width: 100vw;
@@ -152,4 +154,12 @@ export const MenuBurgerOpen = styled(MenuOpen)`
         }
     }
     
+`
+
+export const ArrowRightcon = styled(ArrowRightCircleFill)`
+    width: 48px;
+    padding: 4px;
+    &:hover {
+        padding: 3px;
+    }
 `
