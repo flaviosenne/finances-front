@@ -9,7 +9,11 @@ export const Container = styled.section`
     justify-items: center;
     align-items: center;
     flex-direction: column;
-    
+    background-image: url('images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+
     @media(max-width: 540px){
         padding: 0px;
     }
@@ -161,6 +165,22 @@ export const ReportBanner = styled.div`
     margin: 0 auto;
     border-radius: 5%;
     background-image: url('images/relatorio.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    
+    @media(max-width: 750px){
+        width:90%;
+        height: 250px;
+    }
+`
+
+export const CustomizeThemeBanner = styled.div`
+    width:50%;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 5%;
+    background-image: url('images/preto-branco.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

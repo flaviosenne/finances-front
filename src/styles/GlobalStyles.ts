@@ -8,7 +8,7 @@ export default createGlobalStyle`
     }
     html, body, #root{
         height: 100%;
-        background: rgb(245, 241, 241);
+        background: var(--background_home);
     }
     *, button, input {
         border: 0;
@@ -27,5 +27,6 @@ export default createGlobalStyle`
 
     :root{
         --primary: rgb(0, 128, 128);
+        --background_home: rgb(246, 251, 255);
     }
 `

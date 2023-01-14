@@ -1,5 +1,6 @@
 import React from 'react'
-import { Container, Slogan, SloganTitle, SloganBanner, Feature, FlowCashBanner, FeatureTitle, ReportBanner } from './styles'
+import { Container, Slogan, SloganTitle, SloganBanner, Feature, 
+    FeatureTitle, FlowCashBanner, ReportBanner, CustomizeThemeBanner } from './styles'
 
 export default function Home() {
     return (
@@ -36,6 +37,18 @@ export default function Home() {
                 </FeatureTitle>
                 <ReportBanner />
             </Feature>
+            
+            <Feature>
+                <FeatureTitle>
+                    <h1>Personalização</h1>
+                    <p>Tenha uma plataforma onde é possível personalizar seu layout, 
+                        caso queira um tema mais escuro ou opte por mais claro é simples, 
+                        basta mudar com apenas um clique.
+                    </p>
+                </FeatureTitle>
+                <CustomizeThemeBanner />
+            </Feature>
+        
         </Container>
     )
 }
