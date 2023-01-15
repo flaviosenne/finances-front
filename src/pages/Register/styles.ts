@@ -2,16 +2,17 @@ import styled, { css } from 'styled-components'
 import { Email } from '@styled-icons/entypo/Email'
 import { LockPassword } from '@styled-icons/remix-line/LockPassword'
 import { User} from '@styled-icons/boxicons-regular/User'
+import { EyeFill } from '@styled-icons/bootstrap/EyeFill'
+import { EyeSlashFill } from '@styled-icons/bootstrap/EyeSlashFill'
 
 export const Container = styled.div`
     min-height: calc(100vh - 160px);
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
-
+    
     >div{
-        position: absolute;
-        margin: 10px auto;
         padding: 20px;
     }
 
@@ -78,6 +79,18 @@ export const ButtonContainer = styled.div`
     padding: 10px;
     >div{
         border: 2px solid;
-        background: none;
     }
+`
+
+
+export const EyeOpenIcon = styled(EyeFill)`
+    position: relative;
+    width: 15px;
+    right: 5px;
+`
+
+export const EyeCloseIcon = styled(EyeSlashFill)`
+    position: relative;
+    right: 5px;
+    width: 15px;
 `

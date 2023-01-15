@@ -30,5 +30,7 @@ export default createGlobalStyle`
         --background_home: rgb(246, 251, 255);
         --google: rgb(181, 37, 36);
         --facebook: rgb(0, 120, 246);
+        --confirm: rgb(93, 218, 104);
+        --cancel: rgb(226, 84, 59);
     }
 `

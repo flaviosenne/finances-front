@@ -11,12 +11,12 @@ export const Container = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    justify-items: center;
-    
-    &:first-child {
-        background: red;
-        margin: 0 auto !important; 
+    align-items: center;
+
+    >div{
+        padding: 20px;
     }
+    
 `
 
 export const EmailContainer = styled.div`
