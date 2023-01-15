@@ -4,7 +4,7 @@ import Modal from "../../components/Modal";
 import {
     Container, EmailContainer, EmailIcon,
     Password, PasswordIcon, EyeOpenIcon, EyeCloseIcon,
-    GoogleIcon, FacebookIcon, ButtonContainer, ForgotPassword
+    GoogleIcon, FacebookIcon, ButtonContainer, Register, ForgotPassword
 } from "./styles";
 
 export default function Login() {
@@ -23,7 +23,7 @@ export default function Login() {
 
     return (
         <Container>
-            <Modal closeButton={true} isVisible={true} height={400} width={300} title='Login'>
+            <Modal closeButton={false} height={400} width={300} title='Login'>
                 <>
                     <EmailContainer>
                         <EmailIcon />
@@ -39,10 +39,14 @@ export default function Login() {
 
                     <ButtonContainer>
                         <Button height={30} title='Entrar' color='var(--primary)' />
-                        <Button height={30} title='Google' color='rgb(181, 37, 36)' icon={<GoogleIcon />} />
-                        <Button height={30} title='Facebook' color='rgb(0, 120, 246)' icon={<FacebookIcon />} />
+                        <Button height={30} title='Google' color='var(--google)' icon={<GoogleIcon />} />
+                        <Button height={30} title='Facebook' color='var(--facebook)' icon={<FacebookIcon />} />
                     </ButtonContainer>
 
+                    <Register>
+                        <p>Registrar</p>
+                    </Register>
+                    
                     <ForgotPassword>
                         <p>Esqueci minha senha?</p>
                     </ForgotPassword>

@@ -11,6 +11,12 @@ export const Container = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    justify-items: center;
+    
+    &:first-child {
+        background: red;
+        margin: 0 auto !important; 
+    }
 `
 
 export const EmailContainer = styled.div`
@@ -28,7 +34,7 @@ export const EmailContainer = styled.div`
 export const EmailIcon = styled(Email)`
     width: 20px;
     margin: 5px 5px 0;
-    `
+`
 
 export const Password = styled.div`
     width: 100%;
@@ -49,12 +55,15 @@ export const PasswordIcon = styled(LockPassword)`
 `
 
 export const EyeOpenIcon = styled(EyeFill)`
-    width: 10px;
+    position: relative;
+    width: 15px;
+    right: 10px;
 `
 
 export const EyeCloseIcon = styled(EyeSlashFill)`
-    width: 10px;
-
+    position: relative;
+    right: 10px;
+    width: 15px;
 `
 
 export const GoogleIcon = styled(Google)`
@@ -80,11 +89,23 @@ export const ButtonContainer = styled.div`
 `
 
 
+export const Register = styled.div`
+    width: 100%;
+    p{
+        margin-top: -10px;
+        text-align: center;
+        font-size: 10pt;
+        cursor: pointer;
+        
+    }
+`
+
 export const ForgotPassword = styled.div`
     width: 100%;
     p{
+        margin-top: 10px;
         text-align: center;
-        font-size: 8pt;
+        font-size: 6pt;
         cursor: pointer;
         &:hover{
             text-decoration: underline;

@@ -10,7 +10,7 @@ export const Container = styled.div`
     margin-bottom: 10px;
     display: flex;
     font-size: .8rem;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     background: white;
     border-bottom: 2pt solid var(--primary);
@@ -24,20 +24,18 @@ export const Container = styled.div`
 
 
 export const Logo = styled.div`
-    position: relative;
-    display: flex;
-    justify-content: start;
-    max-width: 25%;
-    margin-top: -10px;
-    img {
-        cursor: pointer;
-        width:100px;
-        @media(max-width: 540px){
-            width:128px;
-            height: 80px;
-            position: absolute;
-            top: 0;
-        }
+
+    background-image: url('images/logo.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    position: relative;    
+    width: 12%;
+    cursor: pointer;
+    
+    @media(max-width: 540px){
+        width:146px;
+        height: 80px;
     }
 `
 
@@ -46,11 +44,15 @@ interface PropsLink {
 }
 
 export const Links = styled.div<PropsLink>`
+    width: 50%;
+    display: flex;
+    margin: 0 auto;
     ul {
         position: relative;
-        width: 90%;
+        width: 80%;
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         
         @media(max-width: 540px){
             display: ${props => props.menu ? 'none': 'flex'};
@@ -86,11 +88,12 @@ export const Login = styled.div`
     justify-content: center;
     justify-items: center;
     cursor: pointer;
+    position: relative;
 
     @media(max-width: 540px){
         display: none;
     }
-
+    
     > span{
         padding: 8pt 4pt;
         font-size: 1.2rem;
@@ -159,6 +162,16 @@ export const MenuBurgerOpen = styled(MenuOpen)`
 export const ArrowRightcon = styled(ArrowRightCircleFill)`
     width: 48px;
     padding: 4px;
+    position: absolute;
+    bottom: 15px;
+    right: 60px;
+    
+    @media(max-width: 720px){
+        right: 40px;
+        width: 42px;
+
+    }
+
     &:hover {
         padding: 3px;
     }

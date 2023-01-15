@@ -28,5 +28,7 @@ export default createGlobalStyle`
     :root{
         --primary: rgb(0, 128, 128);
         --background_home: rgb(246, 251, 255);
+        --google: rgb(181, 37, 36);
+        --facebook: rgb(0, 120, 246);
     }
 `

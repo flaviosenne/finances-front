@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Container, Close, Title, Border } from "./styles";
 
 interface Props {
-    isVisible: boolean
     width: number
     height: number
     title: string

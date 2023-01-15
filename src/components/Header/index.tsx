@@ -9,9 +9,7 @@ export default function Header() {
     const [menuBurger, setMenuBurger] = useState(true)
     return (
         <Container>
-            <Logo >
-                <img src={LogoImage} />
-            </Logo>
+            <Logo/>
 
             <Links menu={menuBurger}>
                 <ul>
@@ -22,12 +20,12 @@ export default function Header() {
             </Links>
 
             <Login>
-                {/* <Link  to='/'> */}
-                    <span>Vamos Começar!</span>
-                {/* </Link> */}
-                    <div>
-                        <Button width={100} height={50} color='trasnparent' title='' icon={<ArrowRightcon />} />
-                    </div>
+                <span>Vamos Começar!</span>
+                <div>
+                    <a href='/login'>
+                        <Button width={90} height={50} color='trasnparent' title='' icon={<ArrowRightcon />} />
+                    </a>
+                </div>
             </Login>
             {!menuBurger ?
                 <MenuBurgerOpen onClick={e => setMenuBurger(!menuBurger)} /> :
