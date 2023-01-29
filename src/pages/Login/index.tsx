@@ -23,7 +23,7 @@ export default function Login() {
 
     return (
         <Container>
-            <Modal closeButton={false} height={400} width={300} title='Login'>
+            <Modal closeButton={false} height={480} width={350} title='Login'>
                 <>
                     <EmailContainer>
                         <EmailIcon />
@@ -38,18 +38,23 @@ export default function Login() {
                     </Password>
 
                     <ButtonContainer>
-                        <Button height={30} title='Entrar' color='var(--primary)' />
+                        <a href='/home'><Button height={30} title='Entrar' color='var(--primary)' /></a>
+                        <a href='/'><Button height={30} title='Cancelar' color='gray' /></a>
+                    </ButtonContainer>
+
+                    <Register>
+                        <p>Não tem uma conta? <a href='/cadastrar'>Registre-se</a></p>
+                    </Register>
+
+                    <ButtonContainer>
                         <Button height={30} title='Google' color='var(--google)' icon={<GoogleIcon />} />
                         <Button height={30} title='Facebook' color='var(--facebook)' icon={<FacebookIcon />} />
                     </ButtonContainer>
 
-                    <Register>
-                        <p>Registrar</p>
-                    </Register>
-                    
                     <ForgotPassword>
                         <p>Esqueci minha senha?</p>
                     </ForgotPassword>
+
                 </>
             </Modal>
         </Container>

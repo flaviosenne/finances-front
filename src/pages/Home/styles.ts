@@ -1,192 +1,82 @@
-import styled from 'styled-components'
+import styled, { css } from "styled-components";
+import { UserCircle } from '@styled-icons/boxicons-regular/UserCircle'
+import { ExchangeDollar } from '@styled-icons/remix-line/ExchangeDollar'
+import { Report } from '@styled-icons/boxicons-solid/Report'
+import { Gears } from '@styled-icons/fa-solid/Gears'
+import { Info } from '@styled-icons/entypo/Info'
 
+export const Container = styled.div`
+    display: flex;
+    height: 100vh;
+    background: white;
+`
 
-export const Container = styled.section`
-    min-height: calc(100vh - 160px);
-    padding: 40px;
+export const SideBar = styled.div`
+    width:200px;
+    background-image: url('images/fundo.jpg');
+    background-position: left;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+    @media(max-width: 600px){
+        max-width:80px;
+        p{
+            display: none;
+        }
+    }
+
+`
+
+export const Content = styled.div`
+    width:100%;
+    padding: 10px;
     display: flex;
     justify-content: center;
-    justify-items: center;
     align-items: center;
-    flex-direction: column;
-    background-image: url('images/fundo.jpg');
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-
-    @media(max-width: 540px){
-        padding: 0px;
-    }
+    margin: 0 auto;
 `
 
-export const Slogan = styled.div`
+export const Avatar = styled(UserCircle)`
+    width: 80px;
     display: flex;
+    margin: 10px auto;
+`
+
+const linksMenu = css`
     width: 100%;
-    min-height: 300px;
-    padding: 10px;
+    display: flex;
+    justify-content: start;
     align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    
-    @media(max-width: 750px){
-        flex-direction: column;
-        align-items: center;
-    }
-
-    
-`
-
-export const SloganTitle = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-
-    h1 {
-        font-size: 18pt;
-        width: 100%;
-        margin:10px 0;
-        text-align: start;
-        
-        @media(max-width: 540px){
-            font-size: 16pt;
-            margin: 0 auto;
-        }
-    }
-    
-    h2 {
-        font-size: 14pt;
-        font-weight: 500;
-        width: 100%;
-        text-align: start;
-        
-        @media(max-width: 540px){
-            font-size: 14pt;
-            margin: 0 auto;
-        }
-    }
-
-    @media(max-width: 750px){
-        width: 75%;
-        justify-content: center;
-        justify-items: center;
-    }
-`
-
-export const SloganBanner = styled.div`
-    width: 45%;
-    height: 250px;
-    margin: 0 auto;
-    background-image: url("images/cifrao.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    
-`
-
-
-export const Feature = styled.div`
-    display: flex;
-    width: 100%;
-    min-height: 350px;
     padding: 10px;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    flex-direction: row;
-    box-shadow: 0 2px 8px var(--primary);
-    margin: 10px;
-    
-    @media(max-width: 750px){
-        width: 90%;
-        padding: 5px;
-        align-items: center;
-        flex-direction: column;
-    }
-    
 `
 
-
-export const FeatureTitle = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-    margin: 10px 0;
-    
-    h1 {
-        font-size: 18pt;
-        width: 100%;
-        margin:10px 0;
-        text-align: start;
-        
-        @media(max-width: 540px){
-            margin: 0 auto;
-            font-size: 16pt;
-        }
-    }
-    
-    p {
-        text-align: start;
-        font-size: 12pt;
-        
-        @media(max-width: 540px){
-            margin: 0 auto;
-            justify-content: center;
-            text-align: justify;
-        }
-    }
-    
-    @media(max-width: 750px){
-        width: 75%;
-        justify-content: center;
-        justify-items: center;
-    }
+export const CashFlowMenu = styled.div`
+    ${linksMenu}
 `
 
-
-export const FlowCashBanner = styled.div`
-    width:50%;
-    height: 250px;
-    margin: 0 auto;
-    border-radius: 5%;
-    background-image: url('images/fluxo.PNG');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    
-    @media(max-width: 750px){
-        width:90%;
-        height: 250px;
-    }
+export const CashIcon = styled(ExchangeDollar)`
+    width: 30px;
 `
 
-export const ReportBanner = styled.div`
-    width:50%;
-    height: 250px;
-    margin: 0 auto;
-    border-radius: 5%;
-    background-image: url('images/relatorio.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    
-    @media(max-width: 750px){
-        width:90%;
-        height: 250px;
-    }
+export const ReportMenu = styled.div`
+    ${linksMenu}
 `
 
-export const CustomizeThemeBanner = styled.div`
-    width:50%;
-    height: 250px;
-    margin: 0 auto;
-    border-radius: 5%;
-    background-image: url('images/preto-branco.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    
-    @media(max-width: 750px){
-        width:90%;
-        height: 250px;
-    }
+export const ReportIcon = styled(Report)`
+    width: 30px;    
+`
+
+export const ConfigMenu = styled.div`
+    ${linksMenu}
+`
+
+export const ConfigIcon = styled(Gears)`
+    width: 30px;
+`
+
+export const InfoIcon = styled(Info)`
+    width: 30px;
 `

@@ -13,7 +13,7 @@ export const Container = styled.div`
     justify-content: space-around;
     flex-wrap: wrap;
     background: white;
-    border-bottom: 2pt solid var(--primary);
+    /* border-bottom: 2pt solid var(--primary); */
     
     @media(max-width: 540px){
         flex-direction: column;
@@ -47,20 +47,26 @@ export const Links = styled.div<PropsLink>`
     width: 50%;
     display: flex;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
     ul {
         position: relative;
-        width: 80%;
+        width: 75%;
         display: flex;
+        height: 60px;
+        margin: 0 auto;
+        align-items: center;
         flex-direction: row;
         justify-content: space-between;
         
         @media(max-width: 540px){
-            display: ${props => props.menu ? 'none': 'flex'};
+            display: ${props => props.menu ? 'none' : 'flex'};
             position: absolute;
             width: 180px;
             height: 200px;
             border-bottom-left-radius: 10%;
             right: 0;
+            top: 72px;
             background: rgba(34, 156, 126, 0.7);
             flex-direction: column;
             justify-content: end;
@@ -73,6 +79,7 @@ export const Links = styled.div<PropsLink>`
             border-width: 1.2px;
             border-style: solid;
             border-color: transparent;
+            height: 20px;
             
             &:hover{
                 border-image: linear-gradient(to right, transparent, var(--primary) 50%, transparent) 0 0 1 0;
@@ -83,28 +90,34 @@ export const Links = styled.div<PropsLink>`
 
 
 export const Login = styled.div`
-    width: 25%;
+    width: 20%;
     display: flex;
     justify-content: center;
-    justify-items: center;
+    align-items: center;
     cursor: pointer;
     position: relative;
-
+    margin: 0 auto;
     @media(max-width: 540px){
         display: none;
     }
-    
-    > span{
+
+
+    span{
+        margin: 0 auto;
         padding: 8pt 4pt;
-        font-size: 1.2rem;
+        font-size: 10pt;
         font-family: 'Roboto', sans-serif;
         font-weight: 600;
-        margin: 10px -10px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        &:hover{
+            text-decoration: underline;
+            border-image: linear-gradient(to right, transparent, var(--primary) 80%, transparent) 0 0 1 0;
+        }
     }
-    div {
-        margin: 6px 0 0 0;
-    }
-    
+
     
 `
 
@@ -160,10 +173,9 @@ export const MenuBurgerOpen = styled(MenuOpen)`
 `
 
 export const ArrowRightcon = styled(ArrowRightCircleFill)`
-    width: 48px;
+    width: 36px;
     padding: 4px;
-    position: absolute;
-    bottom: 15px;
+    bottom: 40px;
     right: 60px;
     
     @media(max-width: 720px){
@@ -172,7 +184,4 @@ export const ArrowRightcon = styled(ArrowRightCircleFill)`
 
     }
 
-    &:hover {
-        padding: 3px;
-    }
 `

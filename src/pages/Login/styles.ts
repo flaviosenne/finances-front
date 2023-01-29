@@ -15,6 +15,8 @@ export const Container = styled.div`
 
     >div{
         padding: 20px;
+        position: relative;
+        margin: 40px auto;
     }
     
 `
@@ -91,12 +93,21 @@ export const ButtonContainer = styled.div`
 
 export const Register = styled.div`
     width: 100%;
+    display: flex;
+    align-items: flex-start;
     p{
-        margin-top: -10px;
+        margin: 0;
+        padding: 2px;
         text-align: center;
-        font-size: 10pt;
-        cursor: pointer;
-        
+        font-size: 8pt;
+        cursor: pointer;    
+    }
+    a{
+        font-size: 11pt;
+        color: blueviolet;
+        &:hover{
+            text-decoration: underline;
+        }
     }
 `
 
@@ -105,7 +116,7 @@ export const ForgotPassword = styled.div`
     p{
         margin-top: 10px;
         text-align: center;
-        font-size: 6pt;
+        font-size: 8pt;
         cursor: pointer;
         &:hover{
             text-decoration: underline;

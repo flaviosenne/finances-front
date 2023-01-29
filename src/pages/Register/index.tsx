@@ -22,7 +22,7 @@ export default function Register() {
 
     return (
         <Container>
-            <Modal closeButton={false} height={350} width={400} title='Registrar'>
+            <Modal closeButton={false} height={400} width={400} title='Registrar'>
                 <Form>
 
                     <NameContainer>
@@ -53,8 +53,14 @@ export default function Register() {
                     </Password>
 
                     <ButtonContainer>
-                        <Button title='Cadastrar' color='var(--confirm)' height={30} width={100} />
-                        <Button title='Cancelar' color='var(--cancel)' height={30} width={100} />
+                        <a href='/'>
+                            <Button title='Cadastrar' color='var(--confirm)' height={30} width={150} />
+
+                        </a>
+                        <a href='/login'>
+                            <Button title='Cancelar' color='var(--cancel)' height={30} width={150} />
+
+                        </a>
                     </ButtonContainer>
                 </Form>
             </Modal>

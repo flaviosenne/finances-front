@@ -6,12 +6,12 @@ import { EyeFill } from '@styled-icons/bootstrap/EyeFill'
 import { EyeSlashFill } from '@styled-icons/bootstrap/EyeSlashFill'
 
 export const Container = styled.div`
-    min-height: calc(100vh - 160px);
+    min-height: calc(100vh - 90px);
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    margin: 0 auto;
     >div{
         padding: 20px;
     }
