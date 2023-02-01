@@ -7,22 +7,23 @@ import { Info } from '@styled-icons/entypo/Info'
 
 export const Container = styled.div`
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     background: white;
 `
 
 export const SideBar = styled.div`
+    min-height: 100vh;
     width:200px;
     background-image: url('images/fundo.jpg');
-    background-position: left;
+    background-position: center;
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
-
     
-    @media(max-width: 600px){
-        max-width:80px;
+    
+    @media(max-width: 700px){
+        max-width:50px;
         p{
             display: none;
         }
@@ -43,6 +44,11 @@ export const Avatar = styled(UserCircle)`
     width: 80px;
     display: flex;
     margin: 10px auto;
+
+    @media(max-width: 700px){
+        width: 45px;
+    }
+
 `
 
 const linksMenu = css`
