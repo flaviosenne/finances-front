@@ -1,10 +1,11 @@
 import React from 'react'
-import FlowCash from '../../components/FlowCash';
+import FlowCash from '../FlowCash';
 import Modal from '../../components/Modal';
 import {
     Container, SideBar,
-    Avatar, CashFlowMenu, CashIcon,
-    ReportMenu, ReportIcon, ConfigMenu,
+    Logo,SideMenu,
+    Avatar, CashIcon,
+    ReportIcon, 
     ConfigIcon, InfoIcon,
 
     Content
@@ -14,27 +15,28 @@ export default function Home() {
     return (
         <Container>
             <SideBar>
+                <Logo/>
                 <Avatar />
 
-                <CashFlowMenu>
+                <SideMenu>
                     <CashIcon />
                     <p>Fluxo de caixa</p>
-                </CashFlowMenu>
+                </SideMenu>
 
-                <ReportMenu>
+                <SideMenu>
                     <ReportIcon />
                     <p>Relatório</p>
-                </ReportMenu>
+                </SideMenu>
 
-                <ConfigMenu>
+                <SideMenu>
                     <ConfigIcon />
                     <p>Configurações</p>
-                </ConfigMenu>
+                </SideMenu>
 
-                <ConfigMenu>
+                <SideMenu>
                     <InfoIcon />
                     <p>Saiba mais</p>
-                </ConfigMenu>
+                </SideMenu>
 
             </SideBar>
 

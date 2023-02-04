@@ -1,7 +1,10 @@
 import React from "react";
+import Button from "../../components/Button";
 import { CurrencyType, formatValueCurrencyTo } from "../../utils/format-value-currency";
 import { formatValueDate } from "../../utils/format-value-date";
-import { Container, Table, EditIcon, TrashIcon } from "./styles";
+import { Container, ButtonContainer, ButtonAdd, AddIcon,
+    ButtonFilter, FilterIcon,
+    Table, EditIcon, TrashIcon } from "./styles";
 
 export default function FlowCash() {
     const mockResult = [
@@ -16,6 +19,16 @@ export default function FlowCash() {
 
     return (
         <Container>
+            <ButtonContainer>
+                <ButtonAdd>
+                    <AddIcon />
+                    <button>Novo</button>
+                </ButtonAdd>
+                <ButtonFilter>
+                    <FilterIcon />
+                    <button>Filtrar</button>
+                </ButtonFilter>
+            </ButtonContainer>
             <Table>
                 <tr>
                     <th>Data</th>

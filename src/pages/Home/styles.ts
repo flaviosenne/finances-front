@@ -31,15 +31,35 @@ export const SideBar = styled.div`
 
 `
 
-export const Content = styled.div`
-    width:100%;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+
+export const Logo = styled.div`    
+    background-image: url('images/logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;    
+    width: 200px;
+    cursor: pointer;
+    height: 90px;
+    
+    @media(max-width: 700px){
+        display: none;
+    }
 `
 
+
+const linksMenu = css`
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+`
+
+export const SideMenu = styled.div`
+    ${linksMenu}
+`
+    
 export const Avatar = styled(UserCircle)`
     width: 80px;
     display: flex;
@@ -51,33 +71,15 @@ export const Avatar = styled(UserCircle)`
 
 `
 
-const linksMenu = css`
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding: 10px;
-`
-
-export const CashFlowMenu = styled.div`
-    ${linksMenu}
-`
-
 export const CashIcon = styled(ExchangeDollar)`
     width: 30px;
-`
-
-export const ReportMenu = styled.div`
-    ${linksMenu}
 `
 
 export const ReportIcon = styled(Report)`
     width: 30px;    
 `
 
-export const ConfigMenu = styled.div`
-    ${linksMenu}
-`
+
 
 export const ConfigIcon = styled(Gears)`
     width: 30px;
@@ -85,4 +87,14 @@ export const ConfigIcon = styled(Gears)`
 
 export const InfoIcon = styled(Info)`
     width: 30px;
+`
+
+
+export const Content = styled.div`
+    width:100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 `
