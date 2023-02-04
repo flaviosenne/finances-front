@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../components/Button";
+import { Link } from 'react-router-dom'
 import { CurrencyType, formatValueCurrencyTo } from "../../utils/format-value-currency";
 import { formatValueDate } from "../../utils/format-value-date";
 import {
@@ -25,17 +26,18 @@ export default function FlowCash() {
         <Home >
             <Container>
                 <ButtonContainer>
-                    
-                    <ButtonAdd>
-                        <AddIcon />
-                        <span>Novo</span>
-                    </ButtonAdd>
-                    
+                    <Link to='/fluxo-de-caixa/novo'>
+                        <ButtonAdd>
+                            <AddIcon />
+                            <span>Novo</span>
+                        </ButtonAdd>
+                    </Link>
+
                     <ButtonFilter>
                         <FilterIcon />
                         <span>Filtrar</span>
                     </ButtonFilter>
-                    
+
                 </ButtonContainer>
                 <Table>
                     <tr>

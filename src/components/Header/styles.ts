@@ -101,6 +101,11 @@ export const Login = styled.div`
         display: none;
     }
 
+    button{
+        &:hover{
+            color: black;
+        }
+    }
 
     span{
         margin: 0 auto;

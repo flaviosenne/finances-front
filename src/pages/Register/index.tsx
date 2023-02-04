@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Button from '../../components/Button'
 import Modal from '../../components/Modal'
 import {
@@ -53,14 +54,14 @@ export default function Register() {
                     </Password>
 
                     <ButtonContainer>
-                        <a href='/'>
+                        <Link to='/'>
                             <Button title='Cadastrar' color='var(--confirm)' height={30} width={150} />
 
-                        </a>
-                        <a href='/login'>
+                        </Link>
+                        <Link to='/login'>
                             <Button title='Cancelar' color='var(--cancel)' height={30} width={150} />
 
-                        </a>
+                        </Link>
                     </ButtonContainer>
                 </Form>
             </Modal>

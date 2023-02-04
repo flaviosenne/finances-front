@@ -69,13 +69,11 @@ export const EyeCloseIcon = styled(EyeSlashFill)`
 `
 
 export const GoogleIcon = styled(Google)`
-    position: absolute;
     left: 20px;
     width: 20px;
 `
 
 export const FacebookIcon = styled(Facebook)`
-    position: absolute;
     left: 20px;
     width: 20px;
 
