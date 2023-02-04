@@ -9,6 +9,7 @@ import GlobalStyles from './styles/GlobalStyles';
 function App() {
   return (
     <>
+
       <RouterProvider router={routes} />
       <GlobalStyles />
     </>

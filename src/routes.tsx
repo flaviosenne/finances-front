@@ -4,19 +4,23 @@ import Login from './pages/Login'
 
 import { createBrowserRouter } from "react-router-dom";
 import Register from './pages/Register';
-import Home from './pages/Home';
+import Report from './pages/Report';
+import FlowCash from './pages/FlowCash';
 
 export const routes = createBrowserRouter([
     {
-        path: '/',  element: <LandingPage/>,
+        path: '/', element: <LandingPage />,
     },
     {
-        path: '/login', element: <Login/>
+        path: '/login', element: <Login />
     },
     {
-        path: '/cadastrar', element: <Register/>
+        path: '/cadastrar', element: <Register />
     },
     {
-        path: '/home', element: <Home/>
+        path: '/fluxo-de-caixa', element: <FlowCash />
+    },
+    {
+        path: '/relatorio', element: <Report />
     }
 ])

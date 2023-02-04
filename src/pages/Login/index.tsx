@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
 import Modal from "../../components/Modal";
 import {
@@ -38,12 +39,12 @@ export default function Login() {
                     </Password>
 
                     <ButtonContainer>
-                        <a href='/home'><Button height={30} title='Entrar' color='var(--primary)' /></a>
-                        <a href='/'><Button height={30} title='Cancelar' color='gray' /></a>
+                        <Link to='/fluxo-de-caixa'><Button height={30} title='Entrar' color='var(--primary)' /></Link>
+                        <Link to='/'><Button height={30} title='Cancelar' color='gray' /></Link>
                     </ButtonContainer>
 
                     <Register>
-                        <p>Não tem uma conta? <a href='/cadastrar'>Registre-se</a></p>
+                        <p>Não tem uma conta? <Link to='/cadastrar'>Registre-se</Link></p>
                     </Register>
 
                     <ButtonContainer>

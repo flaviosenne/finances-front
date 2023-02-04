@@ -4,6 +4,8 @@ import { ExchangeDollar } from '@styled-icons/remix-line/ExchangeDollar'
 import { Report } from '@styled-icons/boxicons-solid/Report'
 import { Gears } from '@styled-icons/fa-solid/Gears'
 import { Info } from '@styled-icons/entypo/Info'
+import { Bank } from '@styled-icons/boxicons-solid/Bank'
+import { Category } from '@styled-icons/boxicons-regular/Category'
 
 export const Container = styled.div`
     display: flex;
@@ -47,19 +49,29 @@ export const Logo = styled.div`
     }
 `
 
-
-const linksMenu = css`
-    width: 100%;
+export const SideMenu = styled.div`
+    width: 90%;
     display: flex;
     justify-content: start;
     align-items: center;
     padding: 10px;
+    margin: 8px 0;
+    border-radius: 12px;
+    transition: background-color 0.4s ;
+    cursor: pointer;
+    
+    p{
+        margin-left: 4px;
+    }
+    
+    &:hover{
+        background-color: var(--primary);
+        opacity: 0.7;
+        color: white;
+
+    }
 `
 
-export const SideMenu = styled.div`
-    ${linksMenu}
-`
-    
 export const Avatar = styled(UserCircle)`
     width: 80px;
     display: flex;
@@ -80,12 +92,19 @@ export const ReportIcon = styled(Report)`
 `
 
 
-
 export const ConfigIcon = styled(Gears)`
     width: 30px;
 `
 
 export const InfoIcon = styled(Info)`
+    width: 30px;
+`
+
+export const BankIcon = styled(Bank)`
+    width: 30px;
+`
+
+export const CategoryIcon = styled(Category)`
     width: 30px;
 `
 

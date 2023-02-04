@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 import { Edit } from '@styled-icons/boxicons-solid/Edit'
 import { Trash } from '@styled-icons/boxicons-regular/Trash'
+import { Plus } from '@styled-icons/bootstrap/Plus'
+import { FilterRight } from '@styled-icons/bootstrap/FilterRight'
 
 export const Container = styled.div`
     width: 100%;
@@ -21,56 +23,6 @@ export const Container = styled.div`
     }
     
 `
-
-export const ButtonContainer = styled.div`
-    display: flex;
-    position: relative;
-    width: 90%;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 10px;
-    
-    
-    @media(max-width: 700px){
-        width: 100%;
-        position: absolute;
-        top: 40px;
-        right: 20px;
-    }
-    
-`
-const buttonCss = css`
-    button{
-        color: white;
-        padding: 12px;
-        width: 100px;
-        border: none;
-        background: var(--primary);
-        border-style: solid;
-        border-radius: 10px;
-        margin: 0 8px;
-        transition: opacity .4 border-color .4;
-
-        &:hover{
-            opacity: .8;
-            border-color: green;
-        }
-    }
-
-`
-
-export const ButtonAdd = styled.div`
-    ${buttonCss}
-`
-
-export const AddIcon = styled.div``
-
-export const ButtonFilter = styled.div`
-    ${buttonCss}
-`
-
-export const FilterIcon = styled.div``
 
 
 
@@ -116,6 +68,57 @@ export const Table = styled.table`
 
 `
 
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    
+    
+    @media(max-width: 700px){
+        width: 100%;
+        position: absolute;
+        top: 40px;
+        right: 20px;
+    }
+    
+`
+
+const buttonCss = css`
+    color: white;
+    padding: 12px;
+    width: 100px;
+    border: none;
+    background: var(--primary);
+    border-style: solid;
+    border-radius: 10px;
+    margin: 0 8px;
+    transition: opacity .4 border-color .4;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+
+    &:hover{
+        opacity: .8;
+        border-color: aqua;
+    }
+
+`
+
+
+export const ButtonAdd = styled.button`
+    ${buttonCss}
+`
+
+export const ButtonFilter = styled.button`
+    ${buttonCss}
+`
+
 const iconCss = css`
     width: 20px;
     transition: padding .5s;
@@ -125,14 +128,25 @@ const iconCss = css`
 
 `
 
+export const AddIcon = styled(Plus)`
+    ${iconCss}
+`
+
+
+export const FilterIcon = styled(FilterRight)`
+    ${iconCss}
+`
+
 export const EditIcon = styled(Edit)`
+    cursor: pointer;
     ${iconCss}
     &:hover{
         color: yellow;
     }
-`
+    `
 
 export const TrashIcon = styled(Trash)`
+cursor: pointer;
     ${iconCss}
     &:hover{
         color: red;

@@ -20,11 +20,11 @@ export default function Header() {
             </Links>
 
             <Login>
-                <a href='/login'>
+                <Link to='/login'>
                     <span>Vamos Começar!
                         <Button width={90} height={50} color='transparent' title='' icon={<ArrowRightcon />} />
                     </span>
-                </a>
+                </Link>
             </Login>
             {!menuBurger ?
                 <MenuBurgerOpen onClick={() => setMenuBurger(!menuBurger)} /> :

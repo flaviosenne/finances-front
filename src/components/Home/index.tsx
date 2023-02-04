@@ -1,21 +1,25 @@
 import React from 'react'
-import FlowCash from '../FlowCash';
-import Modal from '../../components/Modal';
 import {
     Container, SideBar,
-    Logo,SideMenu,
+    Logo, SideMenu,
     Avatar, CashIcon,
-    ReportIcon, 
+    ReportIcon,
     ConfigIcon, InfoIcon,
 
-    Content
+    Content,
+    BankIcon,
+    CategoryIcon
 } from "./styles";
 
-export default function Home() {
+interface Props {
+    children: JSX.Element
+}
+
+const Home: React.FC<Props> = ({ children }: Props) => {
     return (
         <Container>
             <SideBar>
-                <Logo/>
+                <Logo />
                 <Avatar />
 
                 <SideMenu>
@@ -26,6 +30,16 @@ export default function Home() {
                 <SideMenu>
                     <ReportIcon />
                     <p>Relatório</p>
+                </SideMenu>
+
+                <SideMenu>
+                    <BankIcon />
+                    <p>Banco</p>
+                </SideMenu>
+
+                <SideMenu>
+                    <CategoryIcon />
+                    <p>Categoria</p>
                 </SideMenu>
 
                 <SideMenu>
@@ -41,8 +55,10 @@ export default function Home() {
             </SideBar>
 
             <Content>
-                <FlowCash />
+                {children}
             </Content>
         </Container>
     )
 }
+
+export default Home
