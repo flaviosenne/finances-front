@@ -6,10 +6,10 @@ import { formatValueDate } from "../../utils/format-value-date";
 import {
     Container, ButtonContainer, ButtonAdd, AddIcon,
     ButtonFilter, FilterIcon,
-    Table, EditIcon, TrashIcon
+    Table, EditIcon, TrashIcon, Content
 } from "./styles";
 
-import Home from '../../components/Home'
+import SideBar from '../../components/SideBar'
 
 export default function FlowCash() {
     const mockResult = [
@@ -23,47 +23,50 @@ export default function FlowCash() {
     ]
 
     return (
-        <Home >
+        <>
             <Container>
-                <ButtonContainer>
-                    <Link to='/fluxo-de-caixa/novo'>
-                        <ButtonAdd>
-                            <AddIcon />
-                            <span>Novo</span>
-                        </ButtonAdd>
-                    </Link>
+                <SideBar />
+                <Content>
+                    <ButtonContainer>
+                        <Link to='/fluxo-de-caixa/novo'>
+                            <ButtonAdd>
+                                <AddIcon />
+                                <span>Novo</span>
+                            </ButtonAdd>
+                        </Link>
 
-                    <ButtonFilter>
-                        <FilterIcon />
-                        <span>Filtrar</span>
-                    </ButtonFilter>
+                        <ButtonFilter>
+                            <FilterIcon />
+                            <span>Filtrar</span>
+                        </ButtonFilter>
 
-                </ButtonContainer>
-                <Table>
-                    <tr>
-                        <th>Data</th>
-                        <th>Status</th>
-                        <th>Descrição</th>
-                        <th>Valor</th>
-                        <th>Ações</th>
-                    </tr>
-                    {mockResult.map(result => (
-                        <>
-                            <tr>
-                                <td>{formatValueDate(result.date)}</td>
-                                <td>{result.status}</td>
-                                <td><p>{result.description}</p></td>
-                                <td>
-                                    <span style={{ color: `${result.type == 'Expense' ? 'red' : 'var(--confirm)'}` }}>
-                                        {formatValueCurrencyTo(result.value, CurrencyType.pt)}
-                                    </span>
-                                </td>
-                                <td><EditIcon /> <TrashIcon /></td>
-                            </tr>
-                        </>
-                    ))}
-                </Table>
+                    </ButtonContainer>
+                    <Table>
+                        <tr>
+                            <th>Data</th>
+                            <th>Status</th>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                            <th>Ações</th>
+                        </tr>
+                        {mockResult.map(result => (
+                            <>
+                                <tr>
+                                    <td>{formatValueDate(result.date)}</td>
+                                    <td>{result.status}</td>
+                                    <td><p>{result.description}</p></td>
+                                    <td>
+                                        <span style={{ color: `${result.type == 'Expense' ? 'red' : 'var(--confirm)'}` }}>
+                                            {formatValueCurrencyTo(result.value, CurrencyType.pt)}
+                                        </span>
+                                    </td>
+                                    <td><EditIcon /> <TrashIcon /></td>
+                                </tr>
+                            </>
+                        ))}
+                    </Table>
+                </Content>
             </Container>
-        </Home>
+        </>
     )
 }

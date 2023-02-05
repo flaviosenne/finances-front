@@ -7,13 +7,13 @@ import { Info } from '@styled-icons/entypo/Info'
 import { Bank } from '@styled-icons/boxicons-solid/Bank'
 import { Category } from '@styled-icons/boxicons-regular/Category'
 
-export const Container = styled.div`
-    display: flex;
-    min-height: 100vh;
-    background: white;
-`
+// export const Container = styled.div`
+//     display: flex;
+//     min-height: 100vh;
+//     background: white;
+// `
 
-export const SideBar = styled.div`
+export const SideBarContainer = styled.div`
     min-height: 100vh;
     width:200px;
     background-image: url('images/fundo.jpg');

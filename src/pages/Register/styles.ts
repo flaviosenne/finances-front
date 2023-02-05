@@ -25,20 +25,19 @@ export const Form = styled.form`
 `
 
 const lablesCSS = css`
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1px;
+    padding: 8px;
+    margin: 4px 0;
     display: flex;
-    justify-content: start;
-    justify-items: center;
-    margin: 10px 0;
-    width: 90%;
+    align-items: center;
+
     
     input{
+        align-items: center;
         width: 100%;
-        font-size: 11pt;
-        border-bottom: 1px solid;
-        margin-left: 4px;
-        &:focus{
-            border-color: green;
-        }
+        padding: 4px;
     }
 
 `

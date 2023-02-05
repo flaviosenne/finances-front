@@ -5,8 +5,18 @@ import { Plus } from '@styled-icons/bootstrap/Plus'
 import { FilterRight } from '@styled-icons/bootstrap/FilterRight'
 
 export const Container = styled.div`
+    display: flex;
+    min-height: 100vh;
+    background: white;
+` 
+
+export const Content = styled.div`
     width: 100%;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     
     p{
         max-width: 200px;

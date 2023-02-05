@@ -4,8 +4,18 @@ import { Bank } from '@styled-icons/boxicons-solid/Bank'
 import { Category } from '@styled-icons/boxicons-regular/Category'
 import { TextDescription } from '@styled-icons/fluentui-system-regular/TextDescription'
 import { MoneyBill1 } from '@styled-icons/fa-regular/MoneyBill1'
+import { Status } from '@styled-icons/fluentui-system-filled/Status'
+
 export const Container = styled.div`
+    display: flex;
+    min-height: 100vh;
+    background: white;
+`
+
+export const Content = styled.div`
     width: 100%;
+    display: flex;
+    align-items: center;
     div{
         position: relative;
         height: auto;
@@ -33,6 +43,19 @@ export const DateContainer = styled.div`
     justify-content: space-between;
 `
 
+export const StatusContainer = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    span{
+        font-size: 8pt;
+        margin: 0 4px;
+    }
+    input{
+        cursor: pointer;
+    }
+`
+
 export const FieldContainer = styled.div`
     border-style: solid;
     border-radius: 8px;
@@ -47,6 +70,14 @@ export const FieldContainer = styled.div`
         border: none;
         width: 100%;
         padding: 4px;
+    }
+
+    select{ 
+        width: 100%;
+        font-size: 8pt;
+        option{
+            font-size: 10pt;
+        }
     }
 
 `
@@ -79,5 +110,9 @@ export const ValueIcon = styled(MoneyBill1)`
     `
 
 export const DescriptionIcon = styled(TextDescription)`
+    ${iconCss}  
+`
+
+export const StatusIcon = styled(Status)`
     ${iconCss}  
 `

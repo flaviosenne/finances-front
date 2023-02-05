@@ -3,17 +3,21 @@ import {
     ButtonContainer, Container, Form,
     DateContainer, FieldContainer, TypeIcon, BankIcon, CategoryIcon, ValueIcon,
     DescriptionIcon,
+    StatusIcon,
+    StatusContainer,
+    Content,
 } from './styles'
-import Home from '../../components/Home'
 import Modal from '../../components/Modal'
 import Button from '../../components/Button'
 import { Link } from 'react-router-dom'
+import SideBar from '../../components/SideBar'
 
 export default function NewRelease() {
     return (
-        <Home>
 
-            <Container>
+        <Container>
+            <SideBar />
+            <Content>
                 <Modal closeButton={false} height={400} width={400} title='Cadastrar lançamento'>
                     <Form>
 
@@ -31,17 +35,30 @@ export default function NewRelease() {
 
                         <FieldContainer>
                             <TypeIcon />
-                            <input placeholder='tipo lançamento (Despesa, Receita)' type='text' />
+                            <select>
+                                <option >Despesa</option>
+                                <option>Receita</option>
+                            </select>
+                        </FieldContainer>
+
+                        <FieldContainer>
+                            <StatusIcon />
+                            <StatusContainer>
+                                <input type='checkbox' />
+                                <span>Pendente</span>
+                                <input type='checkbox' />
+                                <span>Pago</span>
+                            </StatusContainer>
                         </FieldContainer>
 
                         <FieldContainer>
                             <CategoryIcon />
-                            <input placeholder='categoria' type='text' />
+                            <input placeholder='categoria' type='search' />
                         </FieldContainer>
 
                         <FieldContainer>
                             <BankIcon />
-                            <input placeholder='banco' type='text' />
+                            <input placeholder='banco' type='search' />
                         </FieldContainer>
 
                         <FieldContainer>
@@ -65,7 +82,7 @@ export default function NewRelease() {
                         </ButtonContainer>
                     </Form>
                 </Modal>
-            </Container>
-        </Home>
+            </Content>
+        </Container>
     )
 }

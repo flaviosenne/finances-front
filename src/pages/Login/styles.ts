@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Email } from '@styled-icons/entypo/Email'
 import { LockPassword } from '@styled-icons/remix-line/LockPassword'
 import { EyeFill } from '@styled-icons/bootstrap/EyeFill'
@@ -21,16 +21,27 @@ export const Container = styled.div`
     
 `
 
-export const EmailContainer = styled.div`
-    width: 100%;
+const labelsCSS = css`
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1px;
+    padding: 8px;
+    margin: 4px 0;
     display: flex;
-    justify-content: start;
-    margin: 10px auto;
-
+    align-items: center;
+    justify-content: center;
+    
     input{
-        border-bottom: 0.5px solid;
-        width: 80%;
+        display: flex;
+        padding: 4px;
+        align-items: center;
+        width: 100%;
     }
+`
+
+export const EmailContainer = styled.div`
+    ${labelsCSS}
+    
 `
 
 export const EmailIcon = styled(Email)`
@@ -39,16 +50,8 @@ export const EmailIcon = styled(Email)`
 `
 
 export const Password = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    margin: 10px auto;
-    
-    input{
-        border-bottom: 0.5px solid;
-        width: 80%;
-    }
-    `
+    ${labelsCSS}
+`
 
 export const PasswordIcon = styled(LockPassword)`
     width: 20px;

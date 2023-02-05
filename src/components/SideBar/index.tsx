@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    Container, SideBar,
+    SideBarContainer,
     Logo, SideMenu,
     Avatar, CashIcon,
     ReportIcon,
@@ -11,14 +11,14 @@ import {
     CategoryIcon
 } from "./styles";
 
-interface Props {
-    children: JSX.Element
-}
+// interface Props {
+//     children: JSX.Element
+// }
 
-const Home: React.FC<Props> = ({ children }: Props) => {
+const SideBar = () => {
     return (
-        <Container>
-            <SideBar>
+        // <Container>
+            <SideBarContainer>
                 <Logo />
                 <Avatar />
 
@@ -52,13 +52,13 @@ const Home: React.FC<Props> = ({ children }: Props) => {
                     <p>Saiba mais</p>
                 </SideMenu>
 
-            </SideBar>
+            </SideBarContainer>
 
-            <Content>
-                {children}
-            </Content>
-        </Container>
+            // <Content>
+            //     {children}
+            // </Content>
+        // </Container>
     )
 }
 
-export default Home
+export default SideBar
