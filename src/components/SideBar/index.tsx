@@ -35,11 +35,15 @@ const SideBar = () => {
 
     return (
         <SideBarContainer>
-            <Logo />
+
+            <Link to='/' style={{ width: '100%' }}>
+                <Logo />
+            </Link>
+
             <Avatar />
 
             {linkWithSelected.map(link => (
-                <Link to={link.link} style={{width: '90%'}}>
+                <Link to={link.link} style={{ width: '90%' }}>
                     <SideMenu key={link.title} selected={link.selected}>
                         {link.icon}
                         <p>{link.title}</p>

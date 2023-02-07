@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Menu } from '@styled-icons/material-rounded/Menu'
 import { MenuOpen } from '@styled-icons/material/MenuOpen'
 import { ArrowRightCircleFill } from '@styled-icons/bootstrap/ArrowRightCircleFill'
-
+import logo from '../../assets/images/logo.png'
 
 export const Container = styled.div`
     min-width: 100vw;
@@ -13,7 +13,6 @@ export const Container = styled.div`
     justify-content: space-around;
     flex-wrap: wrap;
     background: white;
-    /* border-bottom: 2pt solid var(--primary); */
     
     @media(max-width: 540px){
         flex-direction: column;
@@ -25,7 +24,7 @@ export const Container = styled.div`
 
 export const Logo = styled.div`
 
-    background-image: url('images/logo.png');
+    background-image: url(${logo});
     background-repeat: no-repeat;
     background-position: left;
     background-size: cover;

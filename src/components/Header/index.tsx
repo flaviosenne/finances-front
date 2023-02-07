@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import LogoImage from '../../assets/images/logo.png'
 import { Container, Links, Logo, Login, MenuBurger, MenuBurgerOpen, ArrowRightcon } from './styles'
 
 import Button from '../Button'

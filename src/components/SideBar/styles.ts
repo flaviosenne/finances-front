@@ -7,10 +7,13 @@ import { Info } from '@styled-icons/entypo/Info'
 import { Bank } from '@styled-icons/boxicons-solid/Bank'
 import { Category } from '@styled-icons/boxicons-regular/Category'
 
+import background from '../../assets/images/fundo.jpg'
+import logo from '../../assets/images/logo.png'
+
 export const SideBarContainer = styled.div`
     min-height: 100vh;
     width:200px;
-    background-image: url('images/fundo.jpg');
+    background-image: url(${background});
     background-position: center;
     background-size: cover;
     display: flex;
@@ -29,7 +32,7 @@ export const SideBarContainer = styled.div`
 
 
 export const Logo = styled.div`    
-    background-image: url('images/logo.png');
+    background-image: url(${logo});
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

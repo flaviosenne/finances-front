@@ -1,5 +1,8 @@
 import styled from 'styled-components'
-
+import dollar from '../../assets/images/cifrao.png'
+import flowCash from '../../assets/images/fluxo.png'
+import report from '../../assets/images/relatorio.png'
+import theme from '../../assets/images/preto-branco.jpg'
 
 export const Container = styled.section`
     min-height: calc(100vh - 160px);
@@ -76,7 +79,7 @@ export const SloganBanner = styled.div`
     width: 45%;
     height: 250px;
     margin: 0 auto;
-    background-image: url("images/cifrao.png");
+    background-image: url(${dollar});
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -148,7 +151,7 @@ export const FlowCashBanner = styled.div`
     height: 250px;
     margin: 0 auto;
     border-radius: 5%;
-    background-image: url('images/fluxo.PNG');
+    background-image: url(${flowCash});
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -164,7 +167,7 @@ export const ReportBanner = styled.div`
     height: 250px;
     margin: 0 auto;
     border-radius: 5%;
-    background-image: url('images/relatorio.png');
+    background-image: url(${report});
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -180,7 +183,7 @@ export const CustomizeThemeBanner = styled.div`
     height: 250px;
     margin: 0 auto;
     border-radius: 5%;
-    background-image: url('images/preto-branco.jpg');
+    background-image: url(${theme});
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

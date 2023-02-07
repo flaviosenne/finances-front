@@ -13,7 +13,7 @@ export default function LandingPage() {
             <Header />
             <Container>
 
-                <Link to='login'>
+                <Link to='login' style={{width: '100%'}}>
                     <Slogan>
                         <SloganTitle>
                             <h1>Gerencia sua finanças com um clique</h1>
@@ -23,7 +23,7 @@ export default function LandingPage() {
                     </Slogan>
                 </Link>
 
-                <Link to='fluxo-de-caixa'>
+                <Link to='fluxo-de-caixa' style={{width: '100%'}}>
                     <Feature>
                         <FeatureTitle>
                             <h1>Fluxo de caixa</h1>
@@ -37,7 +37,7 @@ export default function LandingPage() {
                     </Feature>
                 </Link>
 
-                <Link to='relatorio'>
+                <Link to='relatorio' style={{width: '100%'}}>
                     <Feature>
                         <FeatureTitle>
                             <h1>Relatório</h1>
@@ -51,16 +51,19 @@ export default function LandingPage() {
                     </Feature>
                 </Link>
 
-                <Feature>
-                    <FeatureTitle>
-                        <h1>Personalização</h1>
-                        <p>Tenha uma plataforma onde é possível personalizar seu layout,
-                            caso queira um tema mais escuro ou opte por mais claro é simples,
-                            basta mudar com apenas um clique.
-                        </p>
-                    </FeatureTitle>
-                    <CustomizeThemeBanner />
-                </Feature>
+                <Link to='configuracao' style={{width: '100%'}}>
+
+                    <Feature>
+                        <FeatureTitle>
+                            <h1>Personalização</h1>
+                            <p>Tenha uma plataforma onde é possível personalizar seu layout,
+                                caso queira um tema mais escuro ou opte por mais claro é simples,
+                                basta mudar com apenas um clique.
+                            </p>
+                        </FeatureTitle>
+                        <CustomizeThemeBanner />
+                    </Feature>
+                </Link>
 
             </Container>
             <Footer />
