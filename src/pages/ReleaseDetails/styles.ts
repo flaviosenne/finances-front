@@ -18,6 +18,7 @@ export const Content = styled.div`
     align-items: center;
     div{
         position: relative;
+        width: auto;
         height: auto;
     }
 `
@@ -39,8 +40,14 @@ export const ButtonContainer = styled.div`
 
 export const DateContainer = styled.div`
     display: flex;
+    flex-direction: row;
     padding: 10px;
     justify-content: space-between;
+
+    @media(max-width: 700px){
+        width: 100%;
+        flex-direction: column;
+    }
 `
 
 export const StatusContainer = styled.div`
@@ -61,7 +68,7 @@ export const FieldContainer = styled.div`
     border-radius: 8px;
     border-width: 1px;
     padding: 8px;
-    margin: 4px 0;
+    margin: 4px;
     display: flex;
     align-items: center;
 

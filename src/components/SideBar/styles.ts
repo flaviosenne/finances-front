@@ -7,12 +7,6 @@ import { Info } from '@styled-icons/entypo/Info'
 import { Bank } from '@styled-icons/boxicons-solid/Bank'
 import { Category } from '@styled-icons/boxicons-regular/Category'
 
-// export const Container = styled.div`
-//     display: flex;
-//     min-height: 100vh;
-//     background: white;
-// `
-
 export const SideBarContainer = styled.div`
     min-height: 100vh;
     width:200px;
@@ -49,7 +43,11 @@ export const Logo = styled.div`
     }
 `
 
-export const SideMenu = styled.div`
+
+interface Props {
+    selected: boolean
+}
+export const SideMenu = styled.div<Props>`
     width: 90%;
     display: flex;
     justify-content: start;
@@ -59,6 +57,9 @@ export const SideMenu = styled.div`
     border-radius: 12px;
     transition: background-color 0.4s ;
     cursor: pointer;
+    background-color: ${(props) => props.selected ? 'var(--primary)' : ''};
+    opacity: ${(props) => props.selected ? '0.7' : ''};
+    color: ${(props) => props.selected ? 'white' : ''};
     
     p{
         margin-left: 4px;
@@ -106,14 +107,4 @@ export const BankIcon = styled(Bank)`
 
 export const CategoryIcon = styled(Category)`
     width: 30px;
-`
-
-
-export const Content = styled.div`
-    width:100%;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
 `

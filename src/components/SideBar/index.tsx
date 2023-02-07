@@ -1,63 +1,53 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import { useLocation, useParams, useRoutes } from 'react-router-dom';
 import {
     SideBarContainer,
     Logo, SideMenu,
     Avatar, CashIcon,
     ReportIcon,
     ConfigIcon, InfoIcon,
-
-    Content,
     BankIcon,
     CategoryIcon
 } from "./styles";
 
-// interface Props {
-//     children: JSX.Element
-// }
+interface LinksType {
+    link: string
+    title: string
+    selected: boolean
+    icon: JSX.Element
+}
 
 const SideBar = () => {
+    const { pathname } = useLocation()
+
+    const links: LinksType[] = [
+        { link: '/fluxo-de-caixa', title: 'Fluxo de Caixa', selected: false, icon: <CashIcon /> },
+        { link: '/relatorio', title: 'Relatório', selected: false, icon: <ReportIcon /> },
+        { link: '/banco', title: 'Bancos', selected: false, icon: <BankIcon /> },
+        { link: '/categoria', title: 'Categorias', selected: false, icon: <CategoryIcon /> },
+        { link: '/configuracao', title: 'Configurações', selected: false, icon: <ConfigIcon /> },
+        { link: '/sobre', title: 'Saiba mais', selected: false, icon: <InfoIcon /> }
+    ]
+
+    const linkWithSelected = links.map((link) =>
+        pathname.includes(link.link) ? { ...link, selected: true } : link)
+
     return (
-        // <Container>
-            <SideBarContainer>
-                <Logo />
-                <Avatar />
+        <SideBarContainer>
+            <Logo />
+            <Avatar />
 
-                <SideMenu>
-                    <CashIcon />
-                    <p>Fluxo de caixa</p>
-                </SideMenu>
+            {linkWithSelected.map(link => (
+                <Link to={link.link} style={{width: '90%'}}>
+                    <SideMenu key={link.title} selected={link.selected}>
+                        {link.icon}
+                        <p>{link.title}</p>
+                    </SideMenu>
+                </Link>)
+            )}
 
-                <SideMenu>
-                    <ReportIcon />
-                    <p>Relatório</p>
-                </SideMenu>
-
-                <SideMenu>
-                    <BankIcon />
-                    <p>Banco</p>
-                </SideMenu>
-
-                <SideMenu>
-                    <CategoryIcon />
-                    <p>Categoria</p>
-                </SideMenu>
-
-                <SideMenu>
-                    <ConfigIcon />
-                    <p>Configurações</p>
-                </SideMenu>
-
-                <SideMenu>
-                    <InfoIcon />
-                    <p>Saiba mais</p>
-                </SideMenu>
-
-            </SideBarContainer>
-
-            // <Content>
-            //     {children}
-            // </Content>
-        // </Container>
+        </SideBarContainer>
     )
 }
 

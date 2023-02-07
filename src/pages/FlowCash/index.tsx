@@ -42,15 +42,15 @@ export default function FlowCash() {
 
                     </ButtonContainer>
                     <Table>
-                        <tr>
+                        <thead>
                             <th>Data</th>
                             <th>Status</th>
                             <th>Descrição</th>
                             <th>Valor</th>
                             <th>Ações</th>
-                        </tr>
-                        {mockResult.map(result => (
-                            <>
+                        </thead>
+                        <tbody>
+                            {mockResult.map(result => (
                                 <tr>
                                     <td>{formatValueDate(result.date)}</td>
                                     <td>{result.status}</td>
@@ -62,8 +62,8 @@ export default function FlowCash() {
                                     </td>
                                     <td><EditIcon /> <TrashIcon /></td>
                                 </tr>
-                            </>
-                        ))}
+                            ))}
+                        </tbody>
                     </Table>
                 </Content>
             </Container>
