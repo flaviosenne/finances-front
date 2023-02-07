@@ -1,6 +1,6 @@
 import React from 'react'
 import SideBar from '../../components/SideBar';
-import { Container, Content, Title, SummaryContainer, Summary, Table } from "./styles";
+import { Container, Content, Title, SummaryContainer, Summary, Table, ButtonContainer, ButtonFilter, FilterIcon } from "./styles";
 
 export default function Report() {
 
@@ -39,7 +39,16 @@ export default function Report() {
             <SideBar />
             <Content>
 
-                <Title>  Relatório de Lançamentos Financeiro      </Title>
+
+                <ButtonContainer>
+
+                    <ButtonFilter>
+                        <FilterIcon />
+                        <span>Filtrar</span>
+                    </ButtonFilter>
+
+                </ButtonContainer>
+
                 <SummaryContainer>
 
                     <Summary>

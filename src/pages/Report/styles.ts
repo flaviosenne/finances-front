@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FilterRight } from '@styled-icons/bootstrap/FilterRight'
 
 
 export const Container = styled.div`
@@ -12,10 +13,53 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
     margin: 8px auto;
     
-    `
+`
+
+
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    position: relative;
+    width: 90%;
+    align-self: flex-end;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+        
+`
+export const ButtonFilter = styled.button`
+     color: white;
+    padding: 12px;
+    width: 100px;
+    border: none;
+    background: var(--primary);
+    border-style: solid;
+    border-radius: 10px;
+    margin: 0 8px;
+    transition: opacity .4 border-color .4;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    
+    &:hover{
+        opacity: .8;
+        border-color: aqua;
+    }
+
+`
+
+export const FilterIcon = styled(FilterRight)`
+    width: 20px;
+    transition: padding .5s;
+    &:hover{
+        padding: 1px;
+    }
+`
+
 export const Title = styled.div`
     width: 100%;
     border-radius: 8px;
@@ -35,14 +79,24 @@ export const SummaryContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    
+    text-align: start;
+    > *{
+        &:last-child{
+            text-align: end;
+        }
+    }
     @media(max-width: 700px){
         flex-direction: column;
+        > *{
+            &:last-child{
+                text-align: start;
+            }
+        }
     }
 `
 
 export const Summary = styled.div`
+    width: 100%;
     p{
         padding: 4px;
         margin: 4px 0;
