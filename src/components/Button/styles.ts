@@ -1,6 +1,7 @@
+import React, {InputHTMLAttributes} from 'react'
 import styled from 'styled-components'
 
-interface Props {
+interface Props{
     color?: string
     width?: number
     height: number

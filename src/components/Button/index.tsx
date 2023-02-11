@@ -1,21 +1,22 @@
-import React from 'react'
+import React, { InputHTMLAttributes } from 'react'
 import { Container } from './styles'
 
-interface Props {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
     title: string
     width?: number
     height: number
     color?: string
     icon?: any
+    children?: React.ReactNode
 }
 
-const Button: React.FC<Props> = (props: Props) => {
+const Button: React.FC<Props> = ({ width, height, color, icon, title, ...rest }: Props) => {
     return (
-        <Container width={props.width} height={props.height} color={props.color}>
+        <Container width={width} height={height} color={color} >
             <span>
-                {props.icon}
+                {icon}
             </span>
-            <p>{props.title}</p>
+            <p>{title}</p>
         </Container>
     )
 }

@@ -25,6 +25,9 @@ export const routes = createBrowserRouter([
         path: '/fluxo-de-caixa/novo', element: <NewRelease />
     },
     {
+        path: '/fluxo-de-caixa/detalhes/:id', element: <NewRelease />
+    },
+    {
         path: '/relatorio', element: <Report />
     }
 ])

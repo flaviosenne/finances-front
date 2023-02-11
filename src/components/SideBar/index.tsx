@@ -43,7 +43,7 @@ const SideBar = () => {
             <Avatar />
 
             {linkWithSelected.map(link => (
-                <Link to={link.link} style={{ width: '90%' }}>
+                <Link key={link.title} to={link.link} style={{ width: '90%' }}>
                     <SideMenu key={link.title} selected={link.selected}>
                         {link.icon}
                         <p>{link.title}</p>

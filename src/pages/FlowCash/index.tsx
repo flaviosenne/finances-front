@@ -13,13 +13,13 @@ import SideBar from '../../components/SideBar'
 
 export default function FlowCash() {
     const mockResult = [
-        { date: '2022-01-12', status: 'Pendente', description: 'um tipo de despesafe rrgnrehgu kenveri', type: 'Expense', value: '100' },
-        { date: '2022-07-14', status: 'Pago', description: 'um tipo de r3ceita', type: 'Recep', value: '100' },
-        { date: '2022-02-12', status: 'Pendente', description: 'um tipo de despesa', type: 'Expense', value: '1000.12' },
-        { date: '2022-04-12', status: 'Pago', description: 'um tipo de receita', type: 'Recep', value: '100' },
-        { date: '2022-10-02', status: 'Pendente', description: 'um tipo de despesa', type: 'Expense', value: '100' },
-        { date: '2022-10-09', status: 'Pendente', description: 'um tipo de receits', type: 'Recep', value: '90.00' },
-        { date: '2022-03-21', status: 'Pendente', description: 'um tipo de despesa', type: 'Expense', value: '100' },
+        { date: '2022-01-12', status: 'Pendente', description: 'um tipo de despesafe rrgnrehgu kenveri', type: 'Expense', value: '100' ,id: 'aaa'},
+        { date: '2022-07-14', status: 'Pago', description: 'um tipo de r3ceita', type: 'Recep', value: '100' ,id: 'aaa'},
+        { date: '2022-02-12', status: 'Pendente', description: 'um tipo de despesa', type: 'Expense', value: '1000.12' ,id: 'aaa'},
+        { date: '2022-04-12', status: 'Pago', description: 'um tipo de receita', type: 'Recep', value: '100' ,id: 'aaa'},
+        { date: '2022-10-02', status: 'Pendente', description: 'um tipo de despesa', type: 'Expense', value: '100' ,id: 'aaa'},
+        { date: '2022-10-09', status: 'Pendente', description: 'um tipo de receits', type: 'Recep', value: '90.00' ,id: 'aaa'},
+        { date: '2022-03-21', status: 'Pendente', description: 'um tipo de despesa', type: 'Expense', value: '100' ,id: 'aaa'},
     ]
 
     return (
@@ -60,7 +60,12 @@ export default function FlowCash() {
                                             {formatValueCurrencyTo(result.value, CurrencyType.pt)}
                                         </span>
                                     </td>
-                                    <td><EditIcon /> <TrashIcon /></td>
+                                    <td>
+                                        <Link to= {`detalhes/${result.id}`}>
+                                            <EditIcon />
+                                        </Link> 
+                                        
+                                        <TrashIcon /></td>
                                 </tr>
                             ))}
                         </tbody>

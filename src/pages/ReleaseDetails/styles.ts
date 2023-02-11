@@ -18,7 +18,6 @@ export const Content = styled.div`
     align-items: center;
     div{
         position: relative;
-        width: auto;
         height: auto;
     }
 `
@@ -32,21 +31,11 @@ export const Form = styled.form`
 export const ButtonContainer = styled.div`
     display: flex;
     margin: 8px auto;
+    flex-wrap: wrap;
+    justify-content: center;
 
     button{
-        margin: 0 8px;
-    }
-`
-
-export const DateContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    justify-content: space-between;
-
-    @media(max-width: 700px){
-        width: 100%;
-        flex-direction: column;
+        margin: 4px 8px;
     }
 `
 
