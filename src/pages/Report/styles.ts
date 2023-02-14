@@ -15,6 +15,23 @@ export const Content = styled.div`
     flex-direction: column;
     padding: 10px;
     margin: 8px auto;
+
+    table{
+        display: block;
+        width:100%;
+        max-height: 400px;
+        margin: 8px auto;
+        border-spacing: 1;
+        border-style: dotted;
+        border-width: 1px;
+        overflow-y: scroll;
+        font-size: 14pt;
+        
+        @media(max-width: 700px){
+            width: 100%;
+        }
+
+    }
     
 `
 
@@ -105,40 +122,4 @@ export const Summary = styled.div`
     span{
         font-weight: 300;
     }
-`
-
-export const Table = styled.table`
-    max-width:100%;
-    display: block;
-    max-height: 400px;
-    margin: 8px auto;
-    border-spacing: 1;
-    border-style: solid;
-    border-width: 1px;
-    overflow-y: scroll;
-    
-    @media(max-width: 700px){
-        display: block;
-        overflow-x: scroll;
-        width: 100%;
-        padding: 4px;
-        font-size: 8pt;
-        align-items: center;
-    }
-
-    
-    th{
-        padding: 12px;
-        font-weight: 700;
-        background-color: gainsboro;
-    }
-    
-    td{
-        width: 200px;
-        justify-content: center;
-        text-align: center;
-        padding: 8px;       
-    }
-
-
 `

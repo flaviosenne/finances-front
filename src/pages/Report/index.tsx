@@ -1,6 +1,12 @@
 import React from 'react'
 import SideBar from '../../components/SideBar';
-import { Container, Content, Title, SummaryContainer, Summary, Table, ButtonContainer, ButtonFilter, FilterIcon } from "./styles";
+import Table from '../../components/Table';
+import { CurrencyType, formatValueCurrencyTo } from '../../utils/format-value-currency';
+import { formatValueDate } from '../../utils/format-value-date';
+import {
+    Container, Content, Title, SummaryContainer, Summary,
+    ButtonContainer, ButtonFilter, FilterIcon
+} from "./styles";
 
 export default function Report() {
 
@@ -67,28 +73,30 @@ export default function Report() {
 
                 </SummaryContainer>
                 <Table>
-                    <thead className='thead-dark'>
-                        <th>TIPO</th>
-                        <th>DATA</th>
-                        <th>STATUS</th>
-                        <th>DESCRIÇÃO</th>
-                        <th>CATEGORIA</th>
-                        <th>BANCO</th>
-                        <th>VALOR</th>
-                    </thead>
-                    {mockResult.map(release => (
-                        <tbody>
-                            <td>{release.type}</td>
-                            <td>{release.date}</td>
-                            <td>{release.status}</td>
-                            <td>{release.description}</td>
-                            <td>{release.category}</td>
-                            <td>{release.bank}</td>
-                            <td>{release.value}</td>
-                        </tbody>
+                    <>
+                        <thead className='thead-dark'>
+                            <th>TIPO</th>
+                            <th>DATA</th>
+                            <th>STATUS</th>
+                            <th>DESCRIÇÃO</th>
+                            <th>CATEGORIA</th>
+                            <th>BANCO</th>
+                            <th>VALOR</th>
+                        </thead>
+                        {mockResult.map(release => (
+                            <tbody>
+                                <td>{release.type}</td>
+                                <td>{formatValueDate(release.date)}</td>
+                                <td>{release.status}</td>
+                                <td>{release.description}</td>
+                                <td>{release.category}</td>
+                                <td>{release.bank}</td>
+                                <td>{formatValueCurrencyTo(release.value, CurrencyType.pt)}</td>
+                            </tbody>
 
-                    ))}
+                        ))}
 
+                    </>
                 </Table>
 
             </Content>

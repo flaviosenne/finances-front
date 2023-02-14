@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components'
 import { Edit } from '@styled-icons/boxicons-solid/Edit'
 import { Trash } from '@styled-icons/boxicons-regular/Trash'
 import { Plus } from '@styled-icons/bootstrap/Plus'
@@ -9,6 +9,7 @@ export const Container = styled.div`
     min-height: 100vh;
     background: white;
 ` 
+
 
 export const Content = styled.div`
     width: 100%;
@@ -35,7 +36,6 @@ export const Content = styled.div`
 `
 
 
-
 export const ButtonContainer = styled.div`
     display: flex;
     position: relative;
@@ -54,6 +54,7 @@ export const ButtonContainer = styled.div`
     }
     
 `
+
 
 const buttonCss = css`
     color: white;
@@ -76,6 +77,7 @@ const buttonCss = css`
     }
 
 `
+
 
 
 export const ButtonAdd = styled.button`
@@ -103,6 +105,7 @@ export const AddIcon = styled(Plus)`
 export const FilterIcon = styled(FilterRight)`
     ${iconCss}
 `
+
 
 export const EditIcon = styled(Edit)`
     cursor: pointer;
