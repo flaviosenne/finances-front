@@ -11,26 +11,29 @@ import Modal from '../../components/Modal'
 import Button from '../../components/Button'
 import { Link, useParams } from 'react-router-dom'
 import SideBar from '../../components/SideBar'
+import { useNavigate } from 'react-router-dom'
 
 export default function NewRelease() {
 
+    const navigate = useNavigate()
     const { id } = useParams()
 
     const [date, setDate] = useState<any>()
     const [type, setType] = useState<string>()
     const [status, setStatus] = useState<string>()
-    const [category, setCategory] = useState<string>()
+    const [category, setCategory] = useState<string>();
     const [bank, setBank] = useState<string>()
     const [value, setValue] = useState<number>()
     const [description, setDescription] = useState<string>()
 
-    function handleSubmitRelease() {
-        console.log(date)
+    function handleSubmitRelease(e: any) {
+        e.preventDefault()
+        navigate('/fluxo-de-caixa')
     }
 
     useEffect(() => {
         if (id) {
-            setDate(new Date().toDateString())
+            setDate(new Date().toISOString().split('T')[0])
             setType('RECEP')
             setStatus('PENDING')
             setCategory('Comida')
@@ -60,7 +63,7 @@ export default function NewRelease() {
                         <FieldContainer>
                             <TypeIcon />
                             <select name='type' onChange={e => setType(e.target.value)} defaultValue='EXPENSE'>
-                                <option key='EXPENSE'  selected={type == 'EXPENSE'} value='EXPENSE'>Despesa</option>
+                                <option key='EXPENSE' selected={type == 'EXPENSE'} value='EXPENSE'>Despesa</option>
                                 <option key='RECEP' selected={type == 'RECEP'} value='RECEP'>Receita</option>
                             </select>
                         </FieldContainer>
@@ -117,7 +120,7 @@ export default function NewRelease() {
 
                         <ButtonContainer>
                             <Button
-                                onClick={handleSubmitRelease}
+                                onClick={(e) => handleSubmitRelease(e)}
                                 title='Cadastrar'
                                 color='var(--confirm)' height={30} width={100}
                             />
