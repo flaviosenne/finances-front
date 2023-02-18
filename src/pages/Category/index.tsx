@@ -7,7 +7,7 @@ import { AddIcon, ButtonAdd, ButtonContainer, ButtonFilter, Container, Content, 
 
 export default function Category() {
 
-    
+
     const mockResult = [
         { date: '2022-01-12', status: 'Ativo', description: 'Comida', id: 'aaa' },
         { date: '2022-07-14', status: 'Inativo', description: 'Salario', id: 'aaa' },
@@ -19,50 +19,43 @@ export default function Category() {
         { date: '2022-02-12', status: 'Ativo', description: 'Estudos', id: 'aaa' },
     ]
 
+    const headerTable = ['Data Criação', 'Status', 'Descrições', 'Ações']
 
     return (
         <Container>
             <SideBar />
             <Content>
-           
-            <ButtonContainer>
-                        <Link to='/categoria/novo'>
-                            <ButtonAdd>
-                                <AddIcon />
-                                <span>Novo</span>
-                            </ButtonAdd>
-                        </Link>
 
-                        <ButtonFilter>
-                            <FilterIcon />
-                            <span>Filtrar</span>
-                        </ButtonFilter>
+                <ButtonContainer>
+                    <Link to='/categoria/novo'>
+                        <ButtonAdd>
+                            <AddIcon />
+                            <span>Novo</span>
+                        </ButtonAdd>
+                    </Link>
 
-                    </ButtonContainer>
-                <Table>
-                    <>
-                        <thead>
-                            <th>Data Criação</th>
-                            <th>Status</th>
-                            <th>Descrição</th>
-                            <th>Ações</th>
-                        </thead>
-                        <tbody>
-                            {mockResult.map(result => (
-                                <tr>
-                                    <td>{formatValueDate(result.date)}</td>
-                                    <td>{result.status}</td>
-                                    <td><p>{result.description}</p></td>
-                                    <td>
-                                        <Link to={`detalhes/${result.id}`}>
-                                            <EditIcon />
-                                        </Link>
+                    <ButtonFilter>
+                        <FilterIcon />
+                        <span>Filtrar</span>
+                    </ButtonFilter>
 
-                                        <TrashIcon /></td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </>
+                </ButtonContainer>
+                <Table header={headerTable}>
+                    <tbody>
+                        {mockResult.map(result => (
+                            <tr>
+                                <td>{formatValueDate(result.date)}</td>
+                                <td>{result.status}</td>
+                                <td><p>{result.description}</p></td>
+                                <td>
+                                    <Link to={`detalhes/${result.id}`}>
+                                        <EditIcon />
+                                    </Link>
+
+                                    <TrashIcon /></td>
+                            </tr>
+                        ))}
+                    </tbody>
                 </Table>
             </Content>
         </Container>

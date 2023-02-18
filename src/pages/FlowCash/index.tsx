@@ -22,6 +22,8 @@ export default function FlowCash() {
         { date: '2022-03-21', status: 'Pendente', description: 'um tipo de despesa', type: 'Expense', value: '100', id: 'aaa' },
     ]
 
+    const headerTable = ['Data', 'Status', 'Descrição', 'Valor', 'Ações']
+
     return (
         <>
             <Container>
@@ -41,36 +43,27 @@ export default function FlowCash() {
                         </ButtonFilter>
 
                     </ButtonContainer>
-                    <Table>
-                        <>
-                            <thead>
-                                <th>Data</th>
-                                <th>Status</th>
-                                <th>Descrição</th>
-                                <th>Valor</th>
-                                <th>Ações</th>
-                            </thead>
-                            <tbody>
-                                {mockResult.map(result => (
-                                    <tr>
-                                        <td>{formatValueDate(result.date)}</td>
-                                        <td>{result.status}</td>
-                                        <td><p>{result.description}</p></td>
-                                        <td>
-                                            <span style={{ color: `${result.type == 'Expense' ? 'red' : 'var(--confirm)'}` }}>
-                                                {formatValueCurrencyTo(result.value, CurrencyType.pt)}
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <Link to={`detalhes/${result.id}`}>
-                                                <EditIcon />
-                                            </Link>
+                    <Table header={headerTable}>
+                        <tbody>
+                            {mockResult.map(result => (
+                                <tr>
+                                    <td>{formatValueDate(result.date)}</td>
+                                    <td>{result.status}</td>
+                                    <td><p>{result.description}</p></td>
+                                    <td>
+                                        <span style={{ color: `${result.type == 'Expense' ? 'red' : 'var(--confirm)'}` }}>
+                                            {formatValueCurrencyTo(result.value, CurrencyType.pt)}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <Link to={`detalhes/${result.id}`}>
+                                            <EditIcon />
+                                        </Link>
 
-                                            <TrashIcon /></td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </>
+                                        <TrashIcon /></td>
+                                </tr>
+                            ))}
+                        </tbody>
                     </Table>
                 </Content>
             </Container>

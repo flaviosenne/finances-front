@@ -11,7 +11,7 @@ import {
 export default function Report() {
 
     const mockResult = [
-        { date: '2022-01-12', status: 'Pendente', description: 'um tipo de despesafe rrgnrehgu kenveri', type: 'Expense', value: '100', category: 'categoria', bank: 'Santander' },
+        { date: '2022-01-12', status: 'Pendente', description: 'um tipo de despesafe rrgnrehgu kenveri mmmmmmmmmmmmmmmmde  ed ekcew kln ckjlr jclw ljwe cjwjwk', type: 'Expense', value: '100', category: 'categoria', bank: 'Santander' },
         { date: '2022-07-14', status: 'Pago', description: 'um tipo de r3ceita', type: 'Recep', value: '100', category: 'categoria', bank: 'Santander' },
         { date: '2022-02-12', status: 'Pendente', description: 'um tipo de despesa', type: 'Expense', value: '1000.12', category: 'categoria', bank: 'Santander' },
         { date: '2022-04-12', status: 'Pago', description: 'um tipo de receita', type: 'Recep', value: '100', category: 'categoria', bank: 'Santander' },
@@ -40,11 +40,13 @@ export default function Report() {
         { date: '2022-10-09', status: 'Pendente', description: 'um tipo de receits', type: 'Recep', value: '90.00', category: 'categoria', bank: 'Santander' },
         { date: '2022-03-21', status: 'Pendente', description: 'um tipo de despesa', type: 'Expense', value: '100', category: 'categoria', bank: 'Santander' },
     ]
+
+    const headerTable = ['TIPO', 'DATA', 'STATUS', 'DESCRIÇÃO', 'CATEGORIA', 'BANCO', 'VALOR']
     return (
         <Container>
             <SideBar />
-            <Content>
 
+            <Content>
 
                 <ButtonContainer>
 
@@ -72,31 +74,22 @@ export default function Report() {
                     </Summary>
 
                 </SummaryContainer>
-                <Table>
-                    <>
-                        <thead className='thead-dark'>
-                            <th>TIPO</th>
-                            <th>DATA</th>
-                            <th>STATUS</th>
-                            <th>DESCRIÇÃO</th>
-                            <th>CATEGORIA</th>
-                            <th>BANCO</th>
-                            <th>VALOR</th>
-                        </thead>
+                <Table header={headerTable}>
+                    <tbody>
                         {mockResult.map(release => (
-                            <tbody>
-                                <td>{release.type}</td>
+                            <tr>
+
+                                <td>{release.type == 'Recep' ? 'RECEITA' : 'DESPESA'}</td>
                                 <td>{formatValueDate(release.date)}</td>
                                 <td>{release.status}</td>
                                 <td>{release.description}</td>
                                 <td>{release.category}</td>
                                 <td>{release.bank}</td>
                                 <td>{formatValueCurrencyTo(release.value, CurrencyType.pt)}</td>
-                            </tbody>
+                            </tr>
 
                         ))}
-
-                    </>
+                    </tbody>
                 </Table>
 
             </Content>

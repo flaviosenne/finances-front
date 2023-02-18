@@ -13,6 +13,9 @@ export default function Bank() {
         { date: '2022-02-12', status: 'Ativo', description: 'Caixa', id: 'aaa' },
     ]
 
+    const headerTable = ['Data Criação', 'Status', 'Descrições', 'Ações']
+
+
     return (
         <Container>
             <SideBar />
@@ -32,14 +35,7 @@ export default function Bank() {
                     </ButtonFilter>
 
                 </ButtonContainer>
-                <Table>
-                    <>
-                        <thead>
-                            <th>Data Criação</th>
-                            <th>Status</th>
-                            <th>Descrição</th>
-                            <th>Ações</th>
-                        </thead>
+                <Table header={headerTable}>
                         <tbody>
                             {mockResult.map(result => (
                                 <tr>
@@ -55,7 +51,6 @@ export default function Bank() {
                                 </tr>
                             ))}
                         </tbody>
-                    </>
                 </Table>
             </Content>
         </Container>
