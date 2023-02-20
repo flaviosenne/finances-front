@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Button from '../../components/Button'
-import Modal from '../../components/Modal'
+import ExcludeModal from '../../components/ExcludeModal'
 import SideBar from '../../components/SideBar'
 import Table from '../../components/Table'
 import { formatValueDate } from '../../utils/format-value-date'
 import {
-    AddIcon, ButtonModal, ButtonAdd, ButtonContainer, ButtonFilter,
-    Container, ContentModal, Content, EditIcon, FilterIcon, TrashIcon
+    AddIcon, ButtonAdd, ButtonContainer, ButtonFilter,
+    Container, Content, EditIcon, FilterIcon, TrashIcon
 } from './styles'
 
 export default function Bank() {
@@ -26,31 +25,15 @@ export default function Bank() {
         setOpenModal(true)
         setIdToExclude(id)
     }
-    
-    function removeItem(id: string){
-        setOpenModal(false)
-        alert('item exlcuido  '+ id)
-        setIdToExclude('')
-    }
+
 
 
     return (
         <Container>
             <SideBar />
 
-            <ContentModal display={openModal}>
-
-                <Modal closeButton={true} title='Excluir item' height={150} width={400}>
-                    <>
-                        <span>Você tem certeza que deseja excluir esse item?</span>
-                        <ButtonModal>
-                            <Button title='Sim' height={30} onClick={() => removeItem(idToExclude)} />
-                            <Button title='Não' height={30} onClick={() => setOpenModal(false)} />
-                        </ButtonModal >
-                    </>
-                </Modal>
-            </ContentModal>
-
+            <ExcludeModal path={`/bank/${idToExclude}`} display={openModal} displayState={setOpenModal} />
+           
             <Content>
                 <ButtonContainer>
                     <Link to='/banco/novo'>
