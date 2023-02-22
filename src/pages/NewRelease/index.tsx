@@ -48,7 +48,7 @@ export default function NewRelease() {
         <Container>
             <SideBar />
             <Content>
-                <Modal closeButton={false} height={400} width={400} title='Cadastrar lançamento'>
+                <Modal closeButton={false} height={400} width={400} title={`${id ? 'Atualizar' : 'Cadastrar'} lançamento`}>
                     <Form>
 
                         <FieldContainer>
@@ -121,7 +121,7 @@ export default function NewRelease() {
                         <ButtonContainer>
                             <Button
                                 onClick={(e) => handleSubmitRelease(e)}
-                                title='Cadastrar'
+                                title={`${id ? 'Atualizar' : 'Cadastrar'}`}
                                 color='var(--confirm)' height={30} width={100}
                             />
 

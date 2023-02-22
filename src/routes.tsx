@@ -6,9 +6,11 @@ import { createBrowserRouter } from "react-router-dom";
 import Register from './pages/Register';
 import Report from './pages/Report';
 import FlowCash from './pages/FlowCash';
-import NewRelease from './pages/ReleaseDetails';
+import NewRelease from './pages/NewRelease';
 import Bank from './pages/Bank';
 import Category from './pages/Category';
+import NewCategory from './pages/NewCategory';
+import NewBank from './pages/NewBank';
 
 export const routes = createBrowserRouter([
     {
@@ -20,6 +22,7 @@ export const routes = createBrowserRouter([
     {
         path: '/cadastrar', element: <Register />
     },
+
     {
         path: '/fluxo-de-caixa', element: <FlowCash />
     },
@@ -29,12 +32,27 @@ export const routes = createBrowserRouter([
     {
         path: '/fluxo-de-caixa/detalhes/:id', element: <NewRelease />
     },
+
     {
         path: '/banco', element: <Bank />
     },
     {
+        path: '/banco/novo', element: <NewBank />
+    },
+    {
+        path: '/banco/detalhes/:id', element: <NewBank />
+    },
+
+    {
         path: '/categoria', element: <Category />
     },
+    {
+        path: '/categoria/novo', element: <NewCategory />
+    },
+    {
+        path: '/categoria/detalhes/:id', element: <NewCategory />
+    },
+    
     {
         path: '/relatorio', element: <Report />
     }
