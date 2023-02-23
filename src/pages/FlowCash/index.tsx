@@ -4,13 +4,14 @@ import { CurrencyType, formatValueCurrencyTo } from "../../utils/format-value-cu
 import { formatValueDate } from "../../utils/format-value-date";
 import {
     Container, ButtonContainer, ButtonAdd, AddIcon,
-    ButtonFilter, FilterIcon,
     EditIcon, TrashIcon, Content
 } from "./styles";
 
 import SideBar from '../../components/SideBar'
 import Table from "../../components/Table";
 import ExcludeModal from "../../components/ExcludeModal";
+import Filter from "../../components/Filter";
+import { FieldContainer } from "../../styles/form.styles";
 
 export default function FlowCash() {
 
@@ -40,9 +41,9 @@ export default function FlowCash() {
         <>
             <Container>
                 <SideBar />
-           
+
                 <ExcludeModal path={`/release/${idToExclude}`} display={openModal} displayState={setOpenModal} />
-                
+
                 <Content>
                     <ButtonContainer>
                         <Link to='/fluxo-de-caixa/novo'>
@@ -52,10 +53,26 @@ export default function FlowCash() {
                             </ButtonAdd>
                         </Link>
 
-                        <ButtonFilter>
-                            <FilterIcon />
-                            <span>Filtrar</span>
-                        </ButtonFilter>
+                        <Filter title='Lançamentos'>
+
+                            <>
+                                <FieldContainer>
+
+                                    <input
+                                        placeholder='descrição'
+                                        type='text' />
+                                </FieldContainer>
+
+                                <FieldContainer>
+
+                                    <input
+                                        placeholder='descrição'
+                                        type='text' />
+                                </FieldContainer>
+
+                            </>
+
+                        </Filter>
 
                     </ButtonContainer>
                     <Table header={headerTable}>
@@ -75,7 +92,7 @@ export default function FlowCash() {
                                             <EditIcon />
                                         </Link>
 
-                                        <TrashIcon  onClick={() => handleExcludeItem(result.id)}/></td>
+                                        <TrashIcon onClick={() => handleExcludeItem(result.id)} /></td>
                                 </tr>
                             ))}
                         </tbody>

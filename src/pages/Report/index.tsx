@@ -1,11 +1,13 @@
 import React from 'react'
+import Filter from '../../components/Filter';
 import SideBar from '../../components/SideBar';
 import Table from '../../components/Table';
+import { FieldContainer } from '../../styles/form.styles';
 import { CurrencyType, formatValueCurrencyTo } from '../../utils/format-value-currency';
 import { formatValueDate } from '../../utils/format-value-date';
 import {
     Container, Content, Title, SummaryContainer, Summary,
-    ButtonContainer, ButtonFilter, FilterIcon
+    ButtonContainer
 } from "./styles";
 
 export default function Report() {
@@ -50,10 +52,24 @@ export default function Report() {
 
                 <ButtonContainer>
 
-                    <ButtonFilter>
-                        <FilterIcon />
-                        <span>Filtrar</span>
-                    </ButtonFilter>
+                    <Filter title='Relatório'>
+
+                        <>
+                            <FieldContainer>
+                                <input
+                                    placeholder='descrição'
+                                    type='text' />
+                            </FieldContainer>
+
+                            <FieldContainer>
+
+                                <input
+                                    placeholder='descrição'
+                                    type='text' />
+                            </FieldContainer>
+                        </>
+
+                    </Filter>
 
                 </ButtonContainer>
 

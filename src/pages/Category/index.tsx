@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ExcludeModal from '../../components/ExcludeModal'
+import Filter from '../../components/Filter'
 import SideBar from '../../components/SideBar'
 import Table from '../../components/Table'
+import { FieldContainer } from '../../styles/form.styles'
 import { formatValueDate } from '../../utils/format-value-date'
-import { AddIcon, ButtonAdd, ButtonContainer, ButtonFilter, Container, Content, EditIcon, FilterIcon, TrashIcon } from './styles'
+import {
+    AddIcon, ButtonAdd, ButtonContainer,
+    Container, Content, EditIcon, TrashIcon
+} from './styles'
 
 export default function Category() {
 
@@ -46,11 +51,25 @@ export default function Category() {
                         </ButtonAdd>
                     </Link>
 
-                    <ButtonFilter>
-                        <FilterIcon />
-                        <span>Filtrar</span>
-                    </ButtonFilter>
+                    <Filter title='Categoria'>
 
+                        <>
+                            <FieldContainer>
+
+                                <input
+                                    placeholder='descrição'
+                                    type='text' />
+                            </FieldContainer>
+                            
+                            <FieldContainer>
+                                <input
+                                    placeholder='descrição'
+                                    type='text' />
+                            </FieldContainer>
+
+                        </>
+
+                    </Filter>
                 </ButtonContainer>
                 <Table header={headerTable}>
                     <tbody>

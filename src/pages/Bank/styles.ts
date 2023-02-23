@@ -56,7 +56,7 @@ export const ButtonContainer = styled.div`
 `
 
 
-const buttonCss = css`
+export const ButtonAdd = styled.button`
     color: white;
     padding: 12px;
     width: 100px;
@@ -78,16 +78,6 @@ const buttonCss = css`
 
 `
 
-
-
-export const ButtonAdd = styled.button`
-    ${buttonCss}
-`
-
-export const ButtonFilter = styled.button`
-    ${buttonCss}
-`
-
 const iconCss = css`
     width: 20px;
     transition: padding .5s;
@@ -101,10 +91,6 @@ export const AddIcon = styled(Plus)`
     ${iconCss}
 `
 
-
-export const FilterIcon = styled(FilterRight)`
-    ${iconCss}
-`
 
 
 export const EditIcon = styled(Edit)`

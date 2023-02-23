@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {
     ButtonContainer, Container, Form,
-    FieldContainer, TypeIcon, BankIcon, CategoryIcon, ValueIcon,
+    TypeIcon, BankIcon, CategoryIcon, ValueIcon,
     DescriptionIcon,
     StatusIcon,
     StatusContainer,
@@ -12,6 +12,7 @@ import Button from '../../components/Button'
 import { Link, useParams } from 'react-router-dom'
 import SideBar from '../../components/SideBar'
 import { useNavigate } from 'react-router-dom'
+import { FieldContainer } from '../../styles/form.styles'
 
 export default function NewRelease() {
 

@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ExcludeModal from '../../components/ExcludeModal'
+import Filter from '../../components/Filter'
 import SideBar from '../../components/SideBar'
 import Table from '../../components/Table'
+import { FieldContainer } from '../../styles/form.styles'
 import { formatValueDate } from '../../utils/format-value-date'
 import {
-    AddIcon, ButtonAdd, ButtonContainer, ButtonFilter,
-    Container, Content, EditIcon, FilterIcon, TrashIcon
+    AddIcon, ButtonAdd, ButtonContainer,
+    Container, Content, EditIcon, TrashIcon
 } from './styles'
 
 export default function Bank() {
@@ -33,7 +35,7 @@ export default function Bank() {
             <SideBar />
 
             <ExcludeModal path={`/bank/${idToExclude}`} display={openModal} displayState={setOpenModal} />
-           
+
             <Content>
                 <ButtonContainer>
                     <Link to='/banco/novo'>
@@ -42,11 +44,24 @@ export default function Bank() {
                             <span>Novo</span>
                         </ButtonAdd>
                     </Link>
+                    <Filter title='Banco'>
+                        <>
+                            <FieldContainer>
+                                <input
+                                    placeholder='descrição'
+                                    type='text' />
 
-                    <ButtonFilter>
-                        <FilterIcon />
-                        <span>Filtrar</span>
-                    </ButtonFilter>
+                            </FieldContainer>
+
+                            <FieldContainer>
+
+                                <input
+                                    placeholder='descrição'
+                                    type='text' />
+                            </FieldContainer>
+                        </>
+
+                    </Filter>
 
                 </ButtonContainer>
                 <Table header={headerTable}>

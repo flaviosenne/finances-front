@@ -10,7 +10,7 @@ import { Category } from '@styled-icons/boxicons-regular/Category'
 import background from '../../assets/images/fundo.jpg'
 import logo from '../../assets/images/logo.png'
 
-export const SideBarContainer = styled.div`
+export const SideBarContainer = styled.aside`
     min-height: 100vh;
     width:200px;
     background-image: url(${background});
