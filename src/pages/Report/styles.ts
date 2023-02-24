@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import { FilterRight } from '@styled-icons/bootstrap/FilterRight'
-
 
 export const Container = styled.div`
     display: flex;
     min-height: 100vh;
     background: white;
-`
+    `
 
 export const Content = styled.div`
     width: 80%;
@@ -28,7 +26,11 @@ export const Content = styled.div`
         font-size: 14pt;
         
         @media(max-width: 700px){
-            width: 100%;
+            font-size: 10pt;
+            position: relative;
+            max-width: 100%;
+            margin-left: -50px;
+            margin-top: -100px;
         }
 
     }
@@ -60,10 +62,11 @@ export const Title = styled.div`
 `
 
 export const SummaryContainer = styled.div`
+    position: relative;
     padding: 12px;
     width: 100%;
     border-radius: 8px;
-    margin: 8px;
+    margin: 8px auto;
     background: aquamarine;
     display: flex;
     justify-content: space-between;

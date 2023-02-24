@@ -1,9 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Receipt } from '@styled-icons/fa-solid/Receipt'
-import { Bank } from '@styled-icons/boxicons-solid/Bank'
-import { Category } from '@styled-icons/boxicons-regular/Category'
 import { TextDescription } from '@styled-icons/fluentui-system-regular/TextDescription'
-import { MoneyBill1 } from '@styled-icons/fa-regular/MoneyBill1'
 import { Status } from '@styled-icons/fluentui-system-filled/Status'
 
 export const Container = styled.div`
@@ -19,6 +15,9 @@ export const Content = styled.div`
     div{
         position: relative;
         height: auto;
+    }
+    @media(max-width: 700px){
+        max-width: 90%;
     }
 `
 

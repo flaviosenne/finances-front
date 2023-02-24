@@ -20,6 +20,10 @@ export const Content = styled.div`
         position: relative;
         height: auto;
     }
+    @media(max-width: 700px){
+            max-width: 90%;
+    }
+
 `
 
 export const Form = styled.form`

@@ -18,6 +18,11 @@ export const Container = styled.div<Props>`
     padding: 10px;
     flex-direction: column;
     box-shadow: 0 1px 4px black;
+
+    @media(max-width: 700px){
+            max-width: 80%;
+        }
+
 `
 
 export const Close = styled(CloseOutline)`
