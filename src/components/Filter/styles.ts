@@ -35,48 +35,6 @@ interface Props {
     isVisible: boolean
 }
 
-export const Content = styled.div<Props>`
-    position: fixed;
-    display: ${props => props.isVisible ? 'flex' : 'none'};
-    align-items: center;
-    flex-direction: column;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    min-height: 400px;
-    width: 260px;
-    background: white;
-    right: 0px;
-    bottom: 24px;
-    z-index: 1;
-    box-shadow: 1px 1px 10px;
-    h1{
-        font-size: 12pt;
-        margin: 10px auto;
-    }
-`
-
-export const CheckboxContainer = styled.div`
-    display: flex;
-    justify-content: flex-start;
-    width: 90%;
-    padding: 0 12px;
-    position: absolute;
-    bottom: 64px;
-    font-weight: 300;
-    input{
-        margin: 2px;
-    }
-`
-
-export const ButtonContainer = styled.div`
-    position: absolute;
-    bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    button{
-        margin: 0 4px;
-    }
-`
 
 export const CloseIcon = styled(CloseOutline)`
     width: 20px;
@@ -88,7 +46,58 @@ export const CloseIcon = styled(CloseOutline)`
     cursor: pointer;
 
     &:hover {
-        /* right: 4px; */
         width: 20.5px;
+    }
+`
+
+export const Content = styled.div<Props>`
+    position: fixed;
+    display: ${props => props.isVisible ? 'flex' : 'none'};
+    align-items: center;
+    flex-direction: column;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    min-height: 500px;
+    width: 340px;
+    background: white;
+    right: 0px;
+    bottom: 24px;
+    z-index: 1;
+    box-shadow: 1px 1px 10px;
+    h1{
+        font-size: 12pt;
+        margin: 10px auto;
+    }
+`
+
+export const Fields = styled.div`
+    max-height: 400px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+        width: 1em;
+    }
+`
+
+export const CheckboxContainer = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+    position: absolute;
+    bottom: 64px;
+    font-weight: 300;
+    input{
+        margin: 2px;
+    }
+`
+
+export const ButtonContainer = styled.div`
+    width: 90%;
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    button{
+        margin: 0 4px;
     }
 `

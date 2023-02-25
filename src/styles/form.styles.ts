@@ -5,9 +5,10 @@ export const FieldContainer = styled.div`
     border-radius: 8px;
     border-width: 1px;
     padding: 8px;
-    margin: 4px;
+    margin: 4px auto;
     display: flex;
     align-items: center;
+    width: 90%;
 
 
     input{

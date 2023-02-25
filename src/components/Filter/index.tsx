@@ -1,35 +1,37 @@
 import React, { useState } from 'react'
 import Button from '../Button';
-import { Container, FilterIcon, Content, ButtonContainer, CheckboxContainer, CloseIcon } from "./styles";
+import { Container, FilterIcon, Content, ButtonContainer, CheckboxContainer, CloseIcon, Fields } from "./styles";
 
 interface Props {
-    children: JSX.Element 
+    children: JSX.Element
     title: string
 }
 
-const Filter: React.FC<Props> = ({children, title}:Props) =>{
+const Filter: React.FC<Props> = ({ children, title }: Props) => {
 
     const [isVisible, setIsvisible] = useState(false)
 
     return (
         <>
-            <Container onClick={()=> setIsvisible(!isVisible)}>
+            <Container onClick={() => setIsvisible(!isVisible)}>
                 <FilterIcon />
                 <span>Filtrar</span>
             </Container>
 
             <Content isVisible={isVisible}>
-                <CloseIcon onClick={()=> setIsvisible(!isVisible)}/>
-                
+                <CloseIcon onClick={() => setIsvisible(!isVisible)} />
+
                 <h1>Filtro de {title}</h1>
 
-                {children}
+                <Fields>
+                    {children}
+                </Fields>
 
                 <CheckboxContainer>
                     <input type='checkbox' />
                     <span>Lembrar filtro</span>
                 </CheckboxContainer>
-                
+
                 <ButtonContainer>
                     <Button title='Filtrar' height={30} width={100} />
                     <Button title='Limpar' height={30} width={100} />

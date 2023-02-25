@@ -57,17 +57,41 @@ export default function FlowCash() {
 
                             <>
                                 <FieldContainer>
-
+                                    <span>de:</span>
                                     <input
-                                        placeholder='descrição'
-                                        type='text' />
+                                        placeholder='de'
+                                        type='date' />
+
+                                    <span>até:</span>
+                                    <input
+                                        placeholder='até'
+                                        type='date' />
                                 </FieldContainer>
 
                                 <FieldContainer>
 
                                     <input
-                                        placeholder='descrição'
+                                        placeholder='categoria'
                                         type='text' />
+                                </FieldContainer>
+                                <FieldContainer>
+
+                                    <input
+                                        placeholder='banco'
+                                        type='text' />
+                                </FieldContainer>
+                                <FieldContainer>
+
+                                    <select name='type' defaultValue='EXPENSE'>
+                                        <option key='EXPENSE' value='EXPENSE'>Despesa</option>
+                                        <option key='RECEP' value='RECEP'>Receita</option>
+                                    </select>
+                                </FieldContainer>
+                                <FieldContainer>
+                                    <select name='status' defaultValue='PAID'>
+                                        <option key='PAID' value='PAID'>Pago</option>
+                                        <option key='PENDING' value='PENDING'>Pendente</option>
+                                    </select>
                                 </FieldContainer>
 
                             </>
