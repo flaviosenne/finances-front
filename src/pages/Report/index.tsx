@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Filter from '../../components/Filter';
 import SideBar from '../../components/SideBar';
 import Table from '../../components/Table';
@@ -6,11 +6,20 @@ import { FieldContainer } from '../../styles/form.styles';
 import { CurrencyType, formatValueCurrencyTo } from '../../utils/format-value-currency';
 import { formatValueDate } from '../../utils/format-value-date';
 import {
-    Container, Content, Title, SummaryContainer, Summary,
+    Container, Content, SummaryContainer, Summary,
     ButtonContainer
 } from "./styles";
 
 export default function Report() {
+
+
+    const [dateStart, setDateStart] = useState<any>()
+    const [dateEnd, setDateEnd] = useState<any>()
+    const [type, setType] = useState<string>()
+    const [status, setStatus] = useState<string>()
+    const [category, setCategory] = useState<string>();
+    const [bank, setBank] = useState<string>()
+
 
     const mockResult = [
         { date: '2022-01-12', status: 'Pendente', description: 'um tipo de despesafe rrgnrehgu kenveri mmmmmmmmmmmmmmmmde  ed ekcew kln ckjlr jclw ljwe cjwjwk', type: 'Expense', value: '100', category: 'categoria', bank: 'Santander' },
@@ -44,6 +53,17 @@ export default function Report() {
     ]
 
     const headerTable = ['TIPO', 'DATA', 'STATUS', 'DESCRIÇÃO', 'CATEGORIA', 'BANCO', 'VALOR']
+
+
+    function handleFilter() {
+        console.log(dateStart)
+        console.log(dateEnd)
+        console.log(type)
+        console.log(status)
+        console.log(category)
+        console.log(bank)
+    }
+
     return (
         <Container>
             <SideBar />
@@ -52,21 +72,63 @@ export default function Report() {
 
                 <ButtonContainer>
 
-                    <Filter title='Relatório'>
+                    <Filter title='Relatório' handleFilter={handleFilter}>
 
                         <>
+
                             <FieldContainer>
+                                <span>de:</span>
                                 <input
-                                    placeholder='descrição'
-                                    type='text' />
+                                    placeholder='de'
+                                    type='date'
+                                    value={dateStart}
+                                    onChange={(e) => setDateStart(e.target.value)}
+                                />
+
+                                <span>até:</span>
+                                <input
+                                    placeholder='até'
+                                    type='date'
+                                    value={dateEnd}
+                                    onChange={(e) => setDateEnd(e.target.value)}
+                                />
                             </FieldContainer>
 
                             <FieldContainer>
 
                                 <input
-                                    placeholder='descrição'
-                                    type='text' />
+                                    placeholder='categoria'
+                                    type='text'
+                                    value={category}
+                                    onChange={(e) => setCategory(e.target.value)}
+                                />
                             </FieldContainer>
+                            <FieldContainer>
+
+                                <input
+                                    placeholder='banco'
+                                    type='text'
+                                    value={bank}
+                                    onChange={(e) => setBank(e.target.value)}
+                                />
+                            </FieldContainer>
+                            <FieldContainer>
+
+                                <select name='type' onChange={e => setType(e.target.value)}>
+                                    <option key='' selected disabled value=''>Tipo do lançamento</option>
+                                    <option key='EXPENSE' value='EXPENSE'>Despesa</option>
+                                    <option key='RECEP' value='RECEP'>Receita</option>
+                                </select>
+                            </FieldContainer>
+                            <FieldContainer>
+                                <select name='status' onChange={e => setStatus(e.target.value)}>
+                                    <option key='' selected disabled value=''>Status do lançamento</option>
+                                    <option key='PAID' value='PAID'>Pago</option>
+                                    <option key='PENDING' value='PENDING'>Pendente</option>
+                                </select>
+                            </FieldContainer>
+
+
                         </>
 
                     </Filter>

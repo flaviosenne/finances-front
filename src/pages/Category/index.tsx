@@ -16,15 +16,20 @@ export default function Category() {
     const [openModal, setOpenModal] = useState(false)
     const [idToExclude, setIdToExclude] = useState('')
 
+    const [dateStart, setDateStart] = useState<any>()
+    const [dateEnd, setDateEnd] = useState<any>()
+    const [active, setActive] = useState<string>()
+    const [description, setDescription] = useState<string>()
+
     const mockResult = [
-        { date: '2022-01-12', status: 'Ativo', description: 'Comida', id: 'aaa' },
-        { date: '2022-07-14', status: 'Inativo', description: 'Salario', id: 'aaa' },
-        { date: '2022-02-12', status: 'Ativo', description: 'Bobeira', id: 'aaa' },
-        { date: '2022-02-12', status: 'Ativo', description: 'Fatura', id: 'aaa' },
-        { date: '2022-02-12', status: 'Ativo', description: 'Celular', id: 'aaa' },
-        { date: '2022-02-12', status: 'Ativo', description: 'Casa', id: 'aaa' },
-        { date: '2022-02-12', status: 'Ativo', description: 'Bem estar', id: 'aaa' },
-        { date: '2022-02-12', status: 'Ativo', description: 'Estudos', id: 'aaa' },
+        { date: '2022-01-12', acyive: true, description: 'Comida', id: 'aaa' },
+        { date: '2022-07-14', acyive: false, description: 'Salario', id: 'aaa' },
+        { date: '2022-02-12', acyive: true, description: 'Bobeira', id: 'aaa' },
+        { date: '2022-02-12', acyive: false, description: 'Fatura', id: 'aaa' },
+        { date: '2022-02-12', acyive: true, description: 'Celular', id: 'aaa' },
+        { date: '2022-02-12', acyive: true, description: 'Casa', id: 'aaa' },
+        { date: '2022-02-12', acyive: false, description: 'Bem estar', id: 'aaa' },
+        { date: '2022-02-12', acyive: true, description: 'Estudos', id: 'aaa' },
     ]
 
     const headerTable = ['Data Criação', 'Status', 'Descrições', 'Ações']
@@ -32,6 +37,13 @@ export default function Category() {
     function handleExcludeItem(id: string) {
         setOpenModal(true)
         setIdToExclude(id)
+    }
+
+    function handleFilter() {
+        console.log(dateStart)
+        console.log(dateEnd)
+        console.log(active)
+        console.log(description)
     }
 
 
@@ -51,20 +63,43 @@ export default function Category() {
                         </ButtonAdd>
                     </Link>
 
-                    <Filter title='Categoria'>
+                    <Filter title='Categoria' handleFilter={handleFilter}>
 
                         <>
                             <FieldContainer>
-
+                                <span>de:</span>
                                 <input
-                                    placeholder='descrição'
-                                    type='text' />
+                                    placeholder='de'
+                                    type='date'
+                                    value={dateStart}
+                                    onChange={(e) => setDateStart(e.target.value)}
+                                />
+
+                                <span>até:</span>
+                                <input
+                                    placeholder='até'
+                                    type='date'
+                                    value={dateEnd}
+                                    onChange={(e) => setDateEnd(e.target.value)}
+                                />
                             </FieldContainer>
-                            
+
+                            <FieldContainer>
+
+                                <select name='active' onChange={e => setActive(e.target.value)}>
+                                    <option selected disabled key={null} value={null}>Status da categoria</option>
+                                    <option key={1} value={1}>Ativo</option>
+                                    <option key={0} value={0}>Inativo</option>
+                                </select>
+                            </FieldContainer>
+
                             <FieldContainer>
                                 <input
                                     placeholder='descrição'
-                                    type='text' />
+                                    type='text'
+                                    value={description}
+                                    onChange={e => setDescription(e.target.value)}
+                                />
                             </FieldContainer>
 
                         </>
@@ -76,7 +111,7 @@ export default function Category() {
                         {mockResult.map(result => (
                             <tr>
                                 <td>{formatValueDate(result.date)}</td>
-                                <td>{result.status}</td>
+                                <td>{result.acyive ? 'Ativo' : 'Inativo'}</td>
                                 <td><p>{result.description}</p></td>
                                 <td>
                                     <Link to={`detalhes/${result.id}`}>

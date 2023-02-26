@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { ButtonHTMLAttributes, useState } from 'react'
 import Button from '../Button';
 import { Container, FilterIcon, Content, ButtonContainer, CheckboxContainer, CloseIcon, Fields } from "./styles";
 
-interface Props {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: JSX.Element
     title: string
+    handleFilter: () => void
 }
 
-const Filter: React.FC<Props> = ({ children, title }: Props) => {
+const Filter: React.FC<Props> = ({ children, title, handleFilter }: Props) => {
 
     const [isVisible, setIsvisible] = useState(false)
 
@@ -33,7 +34,7 @@ const Filter: React.FC<Props> = ({ children, title }: Props) => {
                 </CheckboxContainer>
 
                 <ButtonContainer>
-                    <Button title='Filtrar' height={30} width={100} />
+                    <Button title='Filtrar' height={30} width={100} onClick={handleFilter} />
                     <Button title='Limpar' height={30} width={100} />
                 </ButtonContainer>
             </Content>

@@ -1,5 +1,4 @@
-import React, { ButtonHTMLAttributes, InputHTMLAttributes } from 'react'
-import { JsxElement } from 'typescript'
+import React, { ButtonHTMLAttributes } from 'react'
 import { Container } from './styles'
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {

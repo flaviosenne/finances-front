@@ -18,6 +18,13 @@ export default function FlowCash() {
     const [openModal, setOpenModal] = useState(false)
     const [idToExclude, setIdToExclude] = useState('')
 
+    const [dateStart, setDateStart] = useState<any>(null)
+    const [dateEnd, setDateEnd] = useState<any>(null)
+    const [type, setType] = useState<string>(null)
+    const [status, setStatus] = useState<string>(null)
+    const [category, setCategory] = useState<string>(null);
+    const [bank, setBank] = useState<string>(null)
+
 
     const mockResult = [
         { date: '2022-01-12', status: 'Pendente', description: 'um tipo de despesafe rrgnrehgu kenveri', type: 'Expense', value: '100', id: 'u64h,wp´c,wp ' },
@@ -36,13 +43,26 @@ export default function FlowCash() {
         setIdToExclude(id)
     }
 
+    function handleFilter() {
+        console.log(dateStart)
+        console.log(dateEnd)
+        console.log(type)
+        console.log(status)
+        console.log(category)
+        console.log(bank)
+    }
+
 
     return (
         <>
             <Container>
                 <SideBar />
 
-                <ExcludeModal path={`/release/${idToExclude}`} display={openModal} displayState={setOpenModal} />
+                <ExcludeModal
+                    path={`/release/${idToExclude}`}
+                    display={openModal}
+                    displayState={setOpenModal}
+                />
 
                 <Content>
                     <ButtonContainer>
@@ -53,42 +73,56 @@ export default function FlowCash() {
                             </ButtonAdd>
                         </Link>
 
-                        <Filter title='Lançamentos'>
+                        <Filter title='Lançamentos' handleFilter={handleFilter}>
 
                             <>
                                 <FieldContainer>
                                     <span>de:</span>
                                     <input
                                         placeholder='de'
-                                        type='date' />
+                                        type='date'
+                                        value={dateStart}
+                                        onChange={(e) => setDateStart(e.target.value)}
+                                    />
 
                                     <span>até:</span>
                                     <input
                                         placeholder='até'
-                                        type='date' />
+                                        type='date'
+                                        value={dateEnd}
+                                        onChange={(e) => setDateEnd(e.target.value)}
+                                    />
                                 </FieldContainer>
 
                                 <FieldContainer>
 
                                     <input
                                         placeholder='categoria'
-                                        type='text' />
+                                        type='text'
+                                        value={category}
+                                        onChange={(e) => setCategory(e.target.value)}
+                                    />
                                 </FieldContainer>
                                 <FieldContainer>
 
                                     <input
                                         placeholder='banco'
-                                        type='text' />
+                                        type='text'
+                                        value={bank}
+                                        onChange={(e) => setBank(e.target.value)}
+                                    />
                                 </FieldContainer>
                                 <FieldContainer>
 
-                                    <select name='type' defaultValue='EXPENSE'>
+                                    <select name='type' onChange={e => setType(e.target.value)}>
+                                        <option key='' selected disabled value=''>Tipo de lançamento</option>
                                         <option key='EXPENSE' value='EXPENSE'>Despesa</option>
                                         <option key='RECEP' value='RECEP'>Receita</option>
                                     </select>
                                 </FieldContainer>
                                 <FieldContainer>
-                                    <select name='status' defaultValue='PAID'>
+                                    <select name='status' onChange={e => setStatus(e.target.value)}>
+                                        <option key='' selected disabled value=''>Status do lançamento</option>
                                         <option key='PAID' value='PAID'>Pago</option>
                                         <option key='PENDING' value='PENDING'>Pendente</option>
                                     </select>

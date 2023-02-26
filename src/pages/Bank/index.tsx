@@ -15,10 +15,17 @@ export default function Bank() {
 
     const [openModal, setOpenModal] = useState(false)
     const [idToExclude, setIdToExclude] = useState('')
+
+
+    const [dateStart, setDateStart] = useState<any>()
+    const [dateEnd, setDateEnd] = useState<any>()
+    const [active, setActive] = useState<string>()
+    const [description, setDescription] = useState<string>()
+
     const mockResult = [
-        { date: '2022-01-12', status: 'Ativo', description: 'Santander', id: 'aaa' },
-        { date: '2022-07-14', status: 'Inativo', description: 'Nubank', id: 'bbb' },
-        { date: '2022-02-12', status: 'Ativo', description: 'Caixa', id: 'ccc' },
+        { date: '2022-01-12', active: true, description: 'Santander', id: 'aaa' },
+        { date: '2022-07-14', active: false, description: 'Nubank', id: 'bbb' },
+        { date: '2022-02-12', active: true, description: 'Caixa', id: 'ccc' },
     ]
 
     const headerTable = ['Data Criação', 'Status', 'Descrições', 'Ações']
@@ -28,6 +35,13 @@ export default function Bank() {
         setIdToExclude(id)
     }
 
+
+    function handleFilter() {
+        console.log(dateStart)
+        console.log(dateEnd)
+        console.log(active)
+        console.log(description)
+    }
 
 
     return (
@@ -44,20 +58,43 @@ export default function Bank() {
                             <span>Novo</span>
                         </ButtonAdd>
                     </Link>
-                    <Filter title='Banco'>
+
+                    <Filter title='Banco' handleFilter={handleFilter}>
                         <>
                             <FieldContainer>
+                                <span>de:</span>
                                 <input
-                                    placeholder='descrição'
-                                    type='text' />
+                                    placeholder='de'
+                                    type='date'
+                                    value={dateStart}
+                                    onChange={(e) => setDateStart(e.target.value)}
+                                />
 
+                                <span>até:</span>
+                                <input
+                                    placeholder='até'
+                                    type='date'
+                                    value={dateEnd}
+                                    onChange={(e) => setDateEnd(e.target.value)}
+                                />
                             </FieldContainer>
 
                             <FieldContainer>
 
+                                <select name='active' onChange={e => setActive(e.target.value)}>
+                                    <option selected disabled key={null} value={null}>Status do banco</option>
+                                    <option key={1} value={1}>Ativo</option>
+                                    <option key={0} value={0}>Inativo</option>
+                                </select>
+                            </FieldContainer>
+
+                            <FieldContainer>
                                 <input
                                     placeholder='descrição'
-                                    type='text' />
+                                    type='text'
+                                    value={description}
+                                    onChange={e => setDescription(e.target.value)}
+                                />
                             </FieldContainer>
                         </>
 
@@ -69,7 +106,7 @@ export default function Bank() {
                         {mockResult.map(result => (
                             <tr>
                                 <td>{formatValueDate(result.date)}</td>
-                                <td>{result.status}</td>
+                                <td>{result.active ? 'Ativo' : 'Inativo'}</td>
                                 <td><p>{result.description}</p></td>
                                 <td>
                                     <Link to={`detalhes/${result.id}`}>
