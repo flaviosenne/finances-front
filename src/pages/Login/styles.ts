@@ -1,10 +1,4 @@
 import styled, { css } from 'styled-components'
-import { Email } from '@styled-icons/entypo/Email'
-import { LockPassword } from '@styled-icons/remix-line/LockPassword'
-import { EyeFill } from '@styled-icons/bootstrap/EyeFill'
-import { EyeSlashFill } from '@styled-icons/bootstrap/EyeSlashFill'
-import { Google } from '@styled-icons/boxicons-logos/Google'
-import { Facebook } from '@styled-icons/boxicons-logos/Facebook'
 
 export const Container = styled.div`
     min-height: calc(100vh - 160px);
@@ -44,42 +38,9 @@ export const EmailContainer = styled.div`
     
 `
 
-export const EmailIcon = styled(Email)`
-    width: 20px;
-    margin: 5px 5px 0;
-`
 
 export const Password = styled.div`
     ${labelsCSS}
-`
-
-export const PasswordIcon = styled(LockPassword)`
-    width: 20px;
-    margin: 5px 5px 0;
-
-`
-
-export const EyeOpenIcon = styled(EyeFill)`
-    position: relative;
-    width: 15px;
-    right: 10px;
-`
-
-export const EyeCloseIcon = styled(EyeSlashFill)`
-    position: relative;
-    right: 10px;
-    width: 15px;
-`
-
-export const GoogleIcon = styled(Google)`
-    left: 20px;
-    width: 20px;
-`
-
-export const FacebookIcon = styled(Facebook)`
-    left: 20px;
-    width: 20px;
-
 `
 
 export const ButtonContainer = styled.div`

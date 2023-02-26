@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
 import Modal from "../../components/Modal";
 import {
-    Container, EmailContainer, EmailIcon,
-    Password, PasswordIcon, EyeOpenIcon, EyeCloseIcon,
-    GoogleIcon, FacebookIcon, ButtonContainer, Register, ForgotPassword
+    EmailIcon,
+    PasswordIcon, EyeOpenIcon, EyeCloseIcon,
+    GoogleIcon, FacebookIcon
+} from '../../styles/icons.styles'
+import {
+    Container, EmailContainer, Password,
+    ButtonContainer, Register, ForgotPassword
 } from "./styles";
 
 export default function Login() {

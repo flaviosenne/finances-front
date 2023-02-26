@@ -6,9 +6,11 @@ import SideBar from '../../components/SideBar'
 import Table from '../../components/Table'
 import { FieldContainer } from '../../styles/form.styles'
 import { formatValueDate } from '../../utils/format-value-date'
+
+import { AddIcon, EditIcon, TrashIcon } from '../../styles/icons.styles'
 import {
-    AddIcon, ButtonAdd, ButtonContainer,
-    Container, Content, EditIcon, TrashIcon
+    ButtonAdd, ButtonContainer,
+    Container, Content
 } from './styles'
 
 export default function Bank() {

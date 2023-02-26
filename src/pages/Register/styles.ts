@@ -1,9 +1,4 @@
 import styled, { css } from 'styled-components'
-import { Email } from '@styled-icons/entypo/Email'
-import { LockPassword } from '@styled-icons/remix-line/LockPassword'
-import { User} from '@styled-icons/boxicons-regular/User'
-import { EyeFill } from '@styled-icons/bootstrap/EyeFill'
-import { EyeSlashFill } from '@styled-icons/bootstrap/EyeSlashFill'
 
 export const Container = styled.div`
     min-height: calc(100vh - 90px);
@@ -54,22 +49,6 @@ export const Password = styled.div`
     ${lablesCSS}
 `
 
-const iconCSS = css`
-    width: 20px;
-`
-
-
-export const UserIcon = styled(User)`
-    ${iconCSS}
-`
-
-export const EmailIcon = styled(Email)`
-    ${iconCSS}
-`
-
-export const PasswordIcon = styled(LockPassword)`
-    ${iconCSS}
-`
 
 export const ButtonContainer = styled.div`
     display: flex;
@@ -82,14 +61,3 @@ export const ButtonContainer = styled.div`
 `
 
 
-export const EyeOpenIcon = styled(EyeFill)`
-    position: relative;
-    width: 15px;
-    right: 5px;
-`
-
-export const EyeCloseIcon = styled(EyeSlashFill)`
-    position: relative;
-    right: 5px;
-    width: 15px;
-`

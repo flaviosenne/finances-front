@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import {
-    ButtonContainer, Container, Form,
     DescriptionIcon,
     StatusIcon,
+} from '../../styles/icons.styles'
+
+import {
+    ButtonContainer, Container, Form,
     StatusContainer,
     Content,
 } from './styles'

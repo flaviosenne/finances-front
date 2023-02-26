@@ -1,6 +1,4 @@
 import styled, { css } from 'styled-components'
-import { TextDescription } from '@styled-icons/fluentui-system-regular/TextDescription'
-import { Status } from '@styled-icons/fluentui-system-filled/Status'
 
 export const Container = styled.div`
     display: flex;
@@ -49,19 +47,4 @@ export const StatusContainer = styled.div`
     input{
         cursor: pointer;
     }
-`
-
-const iconCss = css`
-    width: 16px;
-    margin-right: 4px;
-`
-
-
-
-export const DescriptionIcon = styled(TextDescription)`
-    ${iconCss}  
-`
-
-export const StatusIcon = styled(Status)`
-    ${iconCss}  
 `

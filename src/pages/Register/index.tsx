@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../../components/Button'
 import Modal from '../../components/Modal'
+import { UserIcon } from '../../styles/icons.styles'
+import { EmailIcon, EyeCloseIcon, EyeOpenIcon, PasswordIcon } from '../../styles/icons.styles'
 import {
     Container, Form, NameContainer, EmailContanier, Password,
-    UserIcon, EmailIcon, PasswordIcon, ButtonContainer, EyeOpenIcon, EyeCloseIcon
+    ButtonContainer
 } from './styles'
 
 export default function Register() {

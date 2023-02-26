@@ -11,6 +11,7 @@ import Bank from './pages/Bank';
 import Category from './pages/Category';
 import NewCategory from './pages/NewCategory';
 import NewBank from './pages/NewBank';
+import Config from './pages/Config';
 
 export const routes = createBrowserRouter([
     {
@@ -55,5 +56,9 @@ export const routes = createBrowserRouter([
     
     {
         path: '/relatorio', element: <Report />
+    },
+
+    {
+        path: '/configuracao', element: <Config />
     }
 ])

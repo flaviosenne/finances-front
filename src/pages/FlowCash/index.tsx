@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom'
 import { CurrencyType, formatValueCurrencyTo } from "../../utils/format-value-currency";
 import { formatValueDate } from "../../utils/format-value-date";
+
 import {
-    Container, ButtonContainer, ButtonAdd, AddIcon,
-    EditIcon, TrashIcon, Content
+    AddIcon,
+    EditIcon, TrashIcon
+} from '../../styles/icons.styles'
+import {
+    Container, ButtonContainer, ButtonAdd, Content
 } from "./styles";
 
 import SideBar from '../../components/SideBar'
