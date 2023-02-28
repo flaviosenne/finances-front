@@ -12,6 +12,7 @@ import {
     ButtonAdd, ButtonContainer,
     Container, Content
 } from './styles'
+import { categoriesMock } from '../../utils/db'
 
 export default function Category() {
 
@@ -22,17 +23,6 @@ export default function Category() {
     const [dateEnd, setDateEnd] = useState<any>()
     const [active, setActive] = useState<string>()
     const [description, setDescription] = useState<string>()
-
-    const mockResult = [
-        { date: '2022-01-12', acyive: true, description: 'Comida', id: 'aaa' },
-        { date: '2022-07-14', acyive: false, description: 'Salario', id: 'aaa' },
-        { date: '2022-02-12', acyive: true, description: 'Bobeira', id: 'aaa' },
-        { date: '2022-02-12', acyive: false, description: 'Fatura', id: 'aaa' },
-        { date: '2022-02-12', acyive: true, description: 'Celular', id: 'aaa' },
-        { date: '2022-02-12', acyive: true, description: 'Casa', id: 'aaa' },
-        { date: '2022-02-12', acyive: false, description: 'Bem estar', id: 'aaa' },
-        { date: '2022-02-12', acyive: true, description: 'Estudos', id: 'aaa' },
-    ]
 
     const headerTable = ['Data Criação', 'Status', 'Descrições', 'Ações']
 
@@ -110,7 +100,7 @@ export default function Category() {
                 </ButtonContainer>
                 <Table header={headerTable}>
                     <tbody>
-                        {mockResult.map(result => (
+                        {categoriesMock.map(result => (
                             <tr>
                                 <td>{formatValueDate(result.date)}</td>
                                 <td>{result.acyive ? 'Ativo' : 'Inativo'}</td>

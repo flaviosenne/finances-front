@@ -12,6 +12,7 @@ import Category from './pages/Category';
 import NewCategory from './pages/NewCategory';
 import NewBank from './pages/NewBank';
 import Config from './pages/Config';
+import About from './pages/About';
 
 export const routes = createBrowserRouter([
     {
@@ -53,12 +54,16 @@ export const routes = createBrowserRouter([
     {
         path: '/categoria/detalhes/:id', element: <NewCategory />
     },
-    
+
     {
         path: '/relatorio', element: <Report />
     },
 
     {
         path: '/configuracao', element: <Config />
+    },
+
+    {
+        path: '/sobre', element: <About />
     }
 ])

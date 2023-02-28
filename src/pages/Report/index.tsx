@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Chart from '../../components/Chart';
 import Filter from '../../components/Filter';
 import SideBar from '../../components/SideBar';
 import Table from '../../components/Table';

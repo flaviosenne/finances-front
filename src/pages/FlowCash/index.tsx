@@ -8,7 +8,7 @@ import {
     EditIcon, TrashIcon
 } from '../../styles/icons.styles'
 import {
-    Container, ButtonContainer, ButtonAdd, Content
+    Container, ButtonContainer, ButtonAdd, Content, AutoCompleteContainer, AutoCompleteItem
 } from "./styles";
 
 import SideBar from '../../components/SideBar'
@@ -16,29 +16,24 @@ import Table from "../../components/Table";
 import ExcludeModal from "../../components/ExcludeModal";
 import Filter from "../../components/Filter";
 import { FieldContainer } from "../../styles/form.styles";
+import { banksMock, categoriesMock, releasesMock } from "../../utils/db";
 
 export default function FlowCash() {
 
+
     const [openModal, setOpenModal] = useState(false)
     const [idToExclude, setIdToExclude] = useState('')
+
+    const [inputCategorySearch, setInputCategorySearch] = useState<string>(null);
+    const [inputBankSearch, setInputBankSearch] = useState<string>(null)
+    const [filterCategorySearch, setFilterCategorySearch] = useState([])
+    const [filterBankSearch, setFilterBankSearch] = useState([])
 
     const [dateStart, setDateStart] = useState<any>(null)
     const [dateEnd, setDateEnd] = useState<any>(null)
     const [type, setType] = useState<string>(null)
     const [status, setStatus] = useState<string>(null)
-    const [category, setCategory] = useState<string>(null);
-    const [bank, setBank] = useState<string>(null)
 
-
-    const mockResult = [
-        { date: '2022-01-12', status: 'Pendente', description: 'um tipo de despesafe rrgnrehgu kenveri', type: 'Expense', value: '100', id: 'u64h,wp´c,wp ' },
-        { date: '2022-07-14', status: 'Pago', description: 'um tipo de r3ceita', type: 'Recep', value: '100', id: 'aaa' },
-        { date: '2022-02-12', status: 'Pendente', description: 'um tipo de despesa', type: 'Expense', value: '1000.12', id: 'erbsfbsf' },
-        { date: '2022-04-12', status: 'Pago', description: 'um tipo de receita', type: 'Recep', value: '100', id: '6543' },
-        { date: '2022-10-02', status: 'Pendente', description: 'um tipo de despesa', type: 'Expense', value: '100', id: '43' },
-        { date: '2022-10-09', status: 'Pendente', description: 'um tipo de receits', type: 'Recep', value: '90.00', id: 'bb' },
-        { date: '2022-03-21', status: 'Pendente', description: 'um tipo de despesa', type: 'Expense', value: '100', id: '12' },
-    ]
 
     const headerTable = ['Data', 'Status', 'Descrição', 'Valor', 'Ações']
 
@@ -47,13 +42,45 @@ export default function FlowCash() {
         setIdToExclude(id)
     }
 
+
+    function handleFilterCategory(event: any) {
+        setInputCategorySearch(event.target.value)
+
+        const newFilter = categoriesMock.filter(value => {
+            return value.description.toLowerCase().includes(event.target.value)
+        })
+
+        setFilterCategorySearch(newFilter)
+    }
+
+    function fillInputCategory(description: string) {
+        setInputCategorySearch(description)
+        setFilterCategorySearch([])
+    }
+
+    function handleFilterBank(event: any) {
+        setInputBankSearch(event.target.value)
+
+        const newFilter = banksMock.filter(value => {
+            return value.description.toLowerCase().includes(event.target.value)
+        })
+
+        setFilterBankSearch(newFilter)
+    }
+
+    function fillInputBank(description: string) {
+        setInputBankSearch(description)
+        setFilterBankSearch([])
+    }
+
+
     function handleFilter() {
         console.log(dateStart)
         console.log(dateEnd)
         console.log(type)
         console.log(status)
-        console.log(category)
-        console.log(bank)
+        console.log(inputCategorySearch)
+        console.log(inputBankSearch)
     }
 
 
@@ -102,20 +129,49 @@ export default function FlowCash() {
 
                                     <input
                                         placeholder='categoria'
-                                        type='text'
-                                        value={category}
-                                        onChange={(e) => setCategory(e.target.value)}
+                                        type='search'
+                                        value={inputCategorySearch}
+                                        onChange={handleFilterCategory}
                                     />
                                 </FieldContainer>
+
+                                {filterCategorySearch.length !== 0 && inputCategorySearch && (
+                                    <AutoCompleteContainer>
+
+                                        {filterCategorySearch.map(result => (
+                                            <p
+                                                onClick={_ => fillInputCategory(result.description)}
+                                                key={result.description}>
+                                                {result.description}
+                                            </p>
+                                        ))}
+                                    </AutoCompleteContainer>
+                                )}
+
                                 <FieldContainer>
 
                                     <input
                                         placeholder='banco'
-                                        type='text'
-                                        value={bank}
-                                        onChange={(e) => setBank(e.target.value)}
+                                        type='search'
+                                        value={inputBankSearch}
+                                        onChange={handleFilterBank}
                                     />
                                 </FieldContainer>
+
+                                {filterBankSearch.length !== 0 && inputBankSearch && (
+
+                                    <AutoCompleteContainer>
+
+                                        {filterBankSearch.map(result => (
+                                            <p
+                                                onClick={_ => fillInputBank(result.description)}
+                                                key={result.description}>
+                                                {result.description}
+                                            </p>
+                                        ))}
+                                    </AutoCompleteContainer>
+                                )}
+
                                 <FieldContainer>
 
                                     <select name='type' onChange={e => setType(e.target.value)}>
@@ -139,7 +195,7 @@ export default function FlowCash() {
                     </ButtonContainer>
                     <Table header={headerTable}>
                         <tbody>
-                            {mockResult.map(result => (
+                            {releasesMock.map(result => (
                                 <tr>
                                     <td>{formatValueDate(result.date)}</td>
                                     <td>{result.status}</td>
