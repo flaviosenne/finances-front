@@ -103,7 +103,7 @@ export default function Category() {
                         {categoriesMock.map(result => (
                             <tr>
                                 <td>{formatValueDate(result.date)}</td>
-                                <td>{result.acyive ? 'Ativo' : 'Inativo'}</td>
+                                <td>{result.active ? 'Ativo' : 'Inativo'}</td>
                                 <td><p>{result.description}</p></td>
                                 <td>
                                     <Link to={`detalhes/${result.id}`}>

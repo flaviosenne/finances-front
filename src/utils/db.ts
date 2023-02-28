@@ -1,23 +1,23 @@
 export const categoriesMock = [
-    { date: '2022-01-12', acyive: true, description: 'Comida', id: 'aaa' },
-    { date: '2022-07-14', acyive: false, description: 'Salario', id: 'aaa' },
-    { date: '2022-02-12', acyive: true, description: 'Bobeira', id: 'aaa' },
-    { date: '2022-02-12', acyive: false, description: 'Fatura', id: 'aaa' },
-    { date: '2022-02-12', acyive: true, description: 'Celular', id: 'aaa' },
-    { date: '2022-02-12', acyive: true, description: 'Casa', id: 'aaa' },
-    { date: '2022-02-12', acyive: false, description: 'Bem estar', id: 'aaa' },
-    { date: '2022-02-12', acyive: true, description: 'Estudos', id: 'aaa' },
+    { date: '2022-01-12', active: true, description: 'Comida', id: 'aaa' },
+    { date: '2022-07-14', active: false, description: 'Salario', id: 'aaa' },
+    { date: '2022-02-12', active: true, description: 'Bobeira', id: 'aaa' },
+    { date: '2022-02-12', active: false, description: 'Fatura', id: 'aaa' },
+    { date: '2022-02-12', active: true, description: 'Celular', id: 'aaa' },
+    { date: '2022-02-12', active: true, description: 'Casa', id: 'aaa' },
+    { date: '2022-02-12', active: false, description: 'Bem estar', id: 'aaa' },
+    { date: '2022-02-12', active: true, description: 'Estudos', id: 'aaa' },
 ]
 
 export const banksMock = [
-    { date: '2022-01-12', acyive: true, description: 'Nubank', id: 'aaa' },
-    { date: '2022-07-14', acyive: false, description: 'Neon', id: 'aaa' },
-    { date: '2022-02-12', acyive: true, description: 'Santander', id: 'aaa' },
-    { date: '2022-02-12', acyive: false, description: 'Caixa', id: 'aaa' },
-    { date: '2022-02-12', acyive: true, description: 'C6Bank', id: 'aaa' },
-    { date: '2022-02-12', acyive: true, description: 'MercadoPago', id: 'aaa' },
-    { date: '2022-02-12', acyive: false, description: 'Cora', id: 'aaa' },
-    { date: '2022-02-12', acyive: true, description: 'Itaú', id: 'aaa' },
+    { date: '2022-01-12', active: true, description: 'Nubank', id: 'aaa' },
+    { date: '2022-07-14', active: false, description: 'Neon', id: 'aaa' },
+    { date: '2022-02-12', active: true, description: 'Santander', id: 'aaa' },
+    { date: '2022-02-12', active: false, description: 'Caixa', id: 'aaa' },
+    { date: '2022-02-12', active: true, description: 'C6Bank', id: 'aaa' },
+    { date: '2022-02-12', active: true, description: 'MercadoPago', id: 'aaa' },
+    { date: '2022-02-12', active: false, description: 'Cora', id: 'aaa' },
+    { date: '2022-02-12', active: true, description: 'Itaú', id: 'aaa' },
 ]
 
 

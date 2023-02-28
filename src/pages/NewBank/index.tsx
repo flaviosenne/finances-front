@@ -31,8 +31,8 @@ export default function NewBank() {
 
     useEffect(() => {
         if (id) {
-            setStatus('ACTIVE')
-            setDescription('Descrição do gasto')
+            setStatus('ATIVO')
+            setDescription('Descrição do banco')
         }
     }, [])
 
@@ -48,18 +48,18 @@ export default function NewBank() {
                             <StatusIcon />
                             <StatusContainer>
                                 <input
-                                    checked={status == 'ATIVO'}
+                                    checked={(id && status == 'ATIVO') || status == 'ATIVO'}
                                     name='status'
                                     type='checkbox'
-                                    value='pendente'
+                                    value='ATIVO'
                                     onChange={e => setStatus(e.target.value)} />
                                 <span>Ativo</span>
 
                                 <input
-                                    checked={status == 'INATIVO'}
+                                    checked={(id && status == 'INATIVO') || status == 'INATIVO'}
                                     name='status'
                                     type='checkbox'
-                                    value='pago'
+                                    value='INATIVO'
                                     onChange={e => setStatus(e.target.value)} />
                                 <span>Inativo</span>
 

@@ -112,19 +112,21 @@ export default function NewRelease() {
                             <StatusIcon />
                             <StatusContainer>
                                 <input
-                                    checked={id && status == 'PENDING'}
+                                    onChange={e => setStatus(e.target.value)} 
+                                    checked={(id && status == 'PENDING') || status == 'PENDING'}
                                     name='status'
                                     type='checkbox'
-                                    value='pendente'
-                                    onChange={e => setStatus(e.target.value)} />
+                                    value='PENDING'
+                                    />
                                 <span>Pendente</span>
 
                                 <input
-                                    checked={id && status == 'PAID'}
+                                    onChange={e => setStatus(e.target.value)}
+                                    checked={(id && status == 'PAID') || status == 'PAID'}
                                     name='status'
                                     type='checkbox'
-                                    value='pago'
-                                    onChange={e => setStatus(e.target.value)} />
+                                    value='PAID'
+                                />
                                 <span>Pago</span>
 
                             </StatusContainer>

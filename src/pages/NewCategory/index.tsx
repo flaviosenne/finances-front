@@ -32,7 +32,7 @@ export default function NewCategory() {
     useEffect(() => {
         if (id) {
             setStatus('ACTIVE')
-            setDescription('Descrição do gasto')
+            setDescription('Descrição da categoria')
         }
     }, [])
 
@@ -48,19 +48,20 @@ export default function NewCategory() {
                             <StatusIcon />
                             <StatusContainer>
                                 <input
-                                    checked={status == 'ATIVO'}
+                                    checked={(id && status == 'ACTIVE') || status == 'ACTIVE'}
                                     name='status'
                                     type='checkbox'
-                                    value='pendente'
+                                    value={'ACTIVE'}
                                     onChange={e => setStatus(e.target.value)} />
                                 <span>Ativo</span>
 
                                 <input
-                                    checked={status == 'INATIVO'}
+                                    checked={(id && status == 'INACTIVE') || status == 'INACTIVE'}
                                     name='status'
                                     type='checkbox'
-                                    value='pago'
-                                    onChange={e => setStatus(e.target.value)} />
+                                    value={'INACTIVE'}
+                                    onChange={e => setStatus(e.target.value)}
+                                />
                                 <span>Inativo</span>
 
                             </StatusContainer>
