@@ -14,20 +14,57 @@ import Button from '../../components/Button'
 import { Link, useParams } from 'react-router-dom'
 import SideBar from '../../components/SideBar'
 import { useNavigate } from 'react-router-dom'
-import { FieldContainer } from '../../styles/form.styles'
+import { AutoCompleteContainer, FieldContainer } from '../../styles/form.styles'
+import { banksMock, categoriesMock } from '../../utils/db'
 
 export default function NewRelease() {
 
     const navigate = useNavigate()
     const { id } = useParams()
 
+
+    const [inputCategorySearch, setInputCategorySearch] = useState<string>(null);
+    const [inputBankSearch, setInputBankSearch] = useState<string>(null)
+    const [filterCategorySearch, setFilterCategorySearch] = useState([])
+    const [filterBankSearch, setFilterBankSearch] = useState([])
+
+
     const [date, setDate] = useState<any>()
     const [type, setType] = useState<string>()
     const [status, setStatus] = useState<string>()
-    const [category, setCategory] = useState<string>();
-    const [bank, setBank] = useState<string>()
     const [value, setValue] = useState<number>()
     const [description, setDescription] = useState<string>()
+
+    function handleFilterCategory(event: any) {
+        setInputCategorySearch(event.target.value)
+
+        const newFilter = categoriesMock.filter(value => {
+            return value.description.toLowerCase().includes(event.target.value)
+        })
+
+        setFilterCategorySearch(newFilter)
+    }
+
+    function fillInputCategory(description: string) {
+        setInputCategorySearch(description)
+        setFilterCategorySearch([])
+    }
+
+    function handleFilterBank(event: any) {
+        setInputBankSearch(event.target.value)
+
+        const newFilter = banksMock.filter(value => {
+            return value.description.toLowerCase().includes(event.target.value)
+        })
+
+        setFilterBankSearch(newFilter)
+    }
+
+    function fillInputBank(description: string) {
+        setInputBankSearch(description)
+        setFilterBankSearch([])
+    }
+
 
     function handleSubmitRelease(e: any) {
         e.preventDefault()
@@ -39,8 +76,8 @@ export default function NewRelease() {
             setDate(new Date().toISOString().split('T')[0])
             setType('RECEP')
             setStatus('PENDING')
-            setCategory('Comida')
-            setBank(null)
+            setInputCategorySearch('Comida')
+            setInputBankSearch(null)
             setValue(123.43)
             setDescription('Descrição do gasto')
         }
@@ -75,7 +112,7 @@ export default function NewRelease() {
                             <StatusIcon />
                             <StatusContainer>
                                 <input
-                                    checked={status == 'PENDING'}
+                                    checked={id && status == 'PENDING'}
                                     name='status'
                                     type='checkbox'
                                     value='pendente'
@@ -83,7 +120,7 @@ export default function NewRelease() {
                                 <span>Pendente</span>
 
                                 <input
-                                    checked={status == 'PAID'}
+                                    checked={id && status == 'PAID'}
                                     name='status'
                                     type='checkbox'
                                     value='pago'
@@ -95,14 +132,51 @@ export default function NewRelease() {
 
                         <FieldContainer>
                             <CategoryIcon />
-                            <input placeholder='categoria' type='search' value={category} />
+                            <input
+                                placeholder='categoria'
+                                type='search'
+                                value={inputCategorySearch}
+                                onChange={handleFilterCategory}
+                            />
                         </FieldContainer>
+
+
+                        {filterCategorySearch.length !== 0 && inputCategorySearch && (
+                            <AutoCompleteContainer>
+
+                                {filterCategorySearch.map(result => (
+                                    <p
+                                        onClick={_ => fillInputCategory(result.description)}
+                                        key={result.description}>
+                                        {result.description}
+                                    </p>
+                                ))}
+                            </AutoCompleteContainer>
+                        )}
 
                         <FieldContainer>
                             <BankIcon />
-                            <input placeholder='banco' type='search' value={bank} />
+                            <input
+                                placeholder='banco'
+                                type='search'
+                                value={inputBankSearch}
+                                onChange={handleFilterBank}
+                            />
                         </FieldContainer>
 
+                        {filterBankSearch.length !== 0 && inputBankSearch && (
+
+                            <AutoCompleteContainer>
+
+                                {filterBankSearch.map(result => (
+                                    <p
+                                        onClick={_ => fillInputBank(result.description)}
+                                        key={result.description}>
+                                        {result.description}
+                                    </p>
+                                ))}
+                            </AutoCompleteContainer>
+                        )}
                         <FieldContainer>
                             <ValueIcon />
                             <input

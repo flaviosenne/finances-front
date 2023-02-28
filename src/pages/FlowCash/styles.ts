@@ -73,36 +73,3 @@ export const ButtonAdd = styled.button`
 
 `
 
-
-export const AutoCompleteContainer = styled.div`
-    width: 90%;
-    margin: -4px auto 0;
-    font-size: 10pt;
-    max-height: 50px;
-    background: whitesmoke;
-    overflow: hidden;
-    border-radius: 4px;
-    padding: 4px;
-    overflow-y: auto;
-    text-align: start;
-    &::-webkit-scrollbar{
-        width: 4px;
-    }
-    p{
-        cursor: pointer;
-        margin: 4px 0;
-        &:hover{
-            opacity: 0.7;
-        }
-    }
-`
-
-export const AutoCompleteItem = styled.div`
-    p{
-        cursor: pointer;
-        margin: 4px 0;
-        &:hover{
-            opacity: 0.7;
-        }
-    }
-`

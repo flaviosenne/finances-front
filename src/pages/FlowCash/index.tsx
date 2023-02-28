@@ -8,14 +8,14 @@ import {
     EditIcon, TrashIcon
 } from '../../styles/icons.styles'
 import {
-    Container, ButtonContainer, ButtonAdd, Content, AutoCompleteContainer, AutoCompleteItem
+    Container, ButtonContainer, ButtonAdd, Content
 } from "./styles";
 
 import SideBar from '../../components/SideBar'
 import Table from "../../components/Table";
 import ExcludeModal from "../../components/ExcludeModal";
 import Filter from "../../components/Filter";
-import { FieldContainer } from "../../styles/form.styles";
+import { AutoCompleteContainer, FieldContainer } from "../../styles/form.styles";
 import { banksMock, categoriesMock, releasesMock } from "../../utils/db";
 
 export default function FlowCash() {
