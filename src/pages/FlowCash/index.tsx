@@ -8,7 +8,7 @@ import {
     EditIcon, TrashIcon
 } from '../../styles/icons.styles'
 import {
-    Container, ButtonContainer, ButtonAdd, Content
+    Container, ButtonContainer, ButtonAdd, Content, ResumeContainer
 } from "./styles";
 
 import SideBar from '../../components/SideBar'
@@ -35,7 +35,7 @@ export default function FlowCash() {
     const [status, setStatus] = useState<string>(null)
 
 
-    const headerTable = ['Data', 'Status', 'Descrição', 'Valor', 'Ações']
+    const headerTable = ['Data', 'Status', 'Descrição', 'Valor', 'Prestação', 'Ações']
 
     function handleExcludeItem(id: string) {
         setOpenModal(true)
@@ -75,14 +75,14 @@ export default function FlowCash() {
 
 
     function handleFilter() {
-        console.log(dateStart)
-        console.log(dateEnd)
-        console.log(type)
-        console.log(status)
-        console.log(inputCategorySearch)
-        console.log(inputBankSearch)
+
     }
 
+    const totalRecep = releasesMock.filter(e => e.type == 'Recep')
+        .reduce((accumulator, currentValue) => accumulator += Number(currentValue.value), 0)
+
+    const totalExpense = releasesMock.filter(e => e.type == 'Expense')
+        .reduce((accumulator, currentValue) => accumulator += Number(currentValue.value), 0)
 
     return (
         <>
@@ -193,6 +193,16 @@ export default function FlowCash() {
                         </Filter>
 
                     </ButtonContainer>
+
+                    <ResumeContainer>
+                        <p>Total de Receitas: <span style={{ color: 'var(--confirm)' }}>{formatValueCurrencyTo(totalRecep.toString(), CurrencyType.pt)}</span></p>
+                        <p>Total de Despesas: <span style={{ color: 'red' }}>{formatValueCurrencyTo(totalExpense.toString(), CurrencyType.pt)}</span></p>
+                        <p>Total: <span style={{ color: (totalRecep > totalExpense) ? 'var(--confirm)' : 'red' }}>
+                            {formatValueCurrencyTo((totalRecep - totalExpense).toString(), CurrencyType.pt)}
+                        </span></p>
+
+                    </ResumeContainer>
+
                     <Table header={headerTable}>
                         <tbody>
                             {releasesMock.map(result => (
@@ -205,6 +215,7 @@ export default function FlowCash() {
                                             {formatValueCurrencyTo(result.value, CurrencyType.pt)}
                                         </span>
                                     </td>
+                                    <td><p>{result.provision}</p></td>
                                     <td>
                                         <Link to={`detalhes/${result.id}`}>
                                             <EditIcon />

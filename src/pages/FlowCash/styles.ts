@@ -51,6 +51,25 @@ export const ButtonContainer = styled.div`
     
 `
 
+export const ResumeContainer = styled.div`
+    position: relative;
+    width: 90%;
+    background: rgb(250, 250, 250);
+    margin: 10px auto;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    p{
+        font-weight: 600;
+        max-width: 100%;
+        span{
+            font-weight: 500;
+        }
+    }
+`
+
 export const ButtonAdd = styled.button`
     color: white;
     padding: 12px;

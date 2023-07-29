@@ -87,6 +87,24 @@ export const Avatar = styled(UserCircle)`
 
 `
 
+export const BackgroundImg = styled.div`
+    width: 80px;
+    display: flex;
+    margin: 10px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    img{
+        width: 90px;
+        border-radius: 50%;
+    }
+    @media(max-width: 700px){
+        width: 45px;
+    }
+
+`
+
 export const CashIcon = styled(ExchangeDollar)`
     width: 30px;
 `

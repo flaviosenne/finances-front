@@ -8,7 +8,8 @@ import {
     ReportIcon,
     ConfigIcon, InfoIcon,
     BankIcon,
-    CategoryIcon
+    CategoryIcon,
+    BackgroundImg
 } from "./styles";
 
 interface LinksType {
@@ -33,6 +34,7 @@ const SideBar = () => {
     const linkWithSelected = links.map((link) =>
         pathname.includes(link.link) ? { ...link, selected: true } : link)
 
+    const url = 'https://avatars.githubusercontent.com/u/20491701?v=4'
     return (
         <SideBarContainer>
 
@@ -40,7 +42,13 @@ const SideBar = () => {
                 <Logo />
             </Link>
 
-            <Avatar />
+            {url != null ?
+                <BackgroundImg>
+                    <img src={url} />
+                </BackgroundImg>
+                :
+                <Avatar />
+            }
 
             {linkWithSelected.map(link => (
                 <Link key={link.title} to={link.link} style={{ width: '90%' }}>

@@ -1,4 +1,4 @@
-import { Pie } from "react-chartjs-2";
+// import { Pie } from "react-chartjs-2";
 import { useRef, useEffect, useState } from "react";
 
 export default function Chart() {
@@ -21,8 +21,9 @@ export default function Chart() {
         ]
     }
     return (
-        <Pie
-            data={dataProps}
-        />
+        <>oi</>
+        // <Pie
+        //     data={dataProps}
+        // />
     )
 }
