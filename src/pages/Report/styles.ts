@@ -14,7 +14,7 @@ export const Content = styled.div`
     padding: 10px;
     margin: 8px auto;
 
-    table{
+    table:not(.summary){
         display: block;
         width:100%;
         max-height: 400px;
@@ -25,16 +25,18 @@ export const Content = styled.div`
         overflow-y: scroll;
         font-size: 14pt;
         
-        @media(max-width: 700px){
+    }
+    
+    @media(max-width: 700px){
+        table:not(.summary){
             font-size: 10pt;
             position: relative;
             max-width: 100%;
             margin-left: -50px;
-            margin-top: -100px;
-        }
-
+            margin-top: -70px;
+            
+        } 
     }
-    
 `
 
 
@@ -67,34 +69,32 @@ export const SummaryContainer = styled.div`
     width: 100%;
     border-radius: 8px;
     margin: 8px auto;
-    background: aquamarine;
+    background: rgba(245, 245, 245, .9);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: start;
-    > *{
-        &:last-child{
-            text-align: end;
+    justify-content: flex-start;
+    align-items: start;
+    
+    table.summary{
+        overflow: hidden;
+        border: none;
+        border-spacing: 0;
+        display: block;
+
+        td{
+            width: fit-content;
+            text-align: left;
+            border-bottom: solid 1px;
+            padding: 4px 10px;
         }
+        
     }
     @media(max-width: 700px){
-        flex-direction: column;
-        > *{
-            &:last-child{
-                text-align: start;
-            }
+        min-height: fit-content;
+        padding: 0;
+        table{
+            max-width: 95%;
+            left:56px;
         }
-    }
-`
 
-export const Summary = styled.div`
-    width: 100%;
-    p{
-        padding: 4px;
-        margin: 4px 0;
-        font-weight: 600;
-    }
-    span{
-        font-weight: 300;
     }
 `

@@ -101,6 +101,10 @@ export const BackgroundImg = styled.div`
     }
     @media(max-width: 700px){
         width: 45px;
+
+        img {
+            width: 30px;
+        }
     }
 
 `
