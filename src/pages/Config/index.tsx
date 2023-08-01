@@ -4,8 +4,8 @@ import Button from '../../components/Button';
 import Modal from '../../components/Modal';
 import SideBar from '../../components/SideBar';
 import { FieldContainer } from '../../styles/form.styles';
-import { EmailIcon, UploadIcon, UserIcon } from '../../styles/icons.styles';
-import { ButtonContainer, Container, Content, FieldContainerName, Form, UploadContainer } from "./styles";
+import { EmailIcon, ThemeIcon, UploadIcon, UserIcon } from '../../styles/icons.styles';
+import { ButtonContainer, Container, Content, FieldContainerName, Form, ThemeContainer, ThemeField, UploadContainer } from "./styles";
 
 export default function Config() {
     return (
@@ -25,6 +25,7 @@ export default function Config() {
                                 <input
                                     placeholder='primeiro nome'
                                     type='text'
+                                    value='joao flavio'
                                 />
                             </FieldContainer>
 
@@ -33,6 +34,7 @@ export default function Config() {
                                 <input
                                     placeholder='ultimo nome'
                                     type='text'
+                                    value='senne'
                                 />
                             </FieldContainer>
 
@@ -43,43 +45,61 @@ export default function Config() {
                             <input
                                 placeholder='email'
                                 type='email'
+                                value='flaviosenne123@gmail.com'
                             />
                         </FieldContainer>
 
                         <FieldContainer>
-                            {/* <ValueIcon /> */}
-                            <input
-                                placeholder='valor'
-                                type='number'
-                            // onChange={e => setValue(Number(e.target.value))} 
+                            <ThemeIcon />
+                            <ThemeContainer>
+                                <ThemeField>
+                                    <input
+                                        name='theme'
+                                        value='dark'
+                                        type='radio'
+                                        // onChange={e => setValue(Number(e.target.value))} 
+                                        />
+                                    <span>Tema escuro</span>
+                                </ThemeField>
+                                <ThemeField>
+                                    <input
+                                        name='theme'
+                                        value='light'
+                                        type='radio'
+                                    // onChange={e => setValue(Number(e.target.value))} 
+                                    />
+                                    <span>Tema claro</span>
+                                </ThemeField>
+                            </ThemeContainer>
+
+                    </FieldContainer>
+
+                    <FieldContainer>
+                        <UploadContainer>
+                            <UploadIcon />
+                            <input className='file'
+                                placeholder='adicionar foto'
+                                type='file'
                             />
-                        </FieldContainer>
+                            <span>Adicione uma foto</span>
+                        </UploadContainer>
+                    </FieldContainer>
 
-                        <FieldContainer>
-                            <UploadContainer>
-                                <UploadIcon />
-                                <input
-                                    placeholder='adicionar foto'
-                                    type='file'
-                                />
-                            </UploadContainer>
-                        </FieldContainer>
+                    <ButtonContainer>
+                        <Button
+                            // onClick={(e) => handleSubmitRelease(e)}
+                            title='Atualizar'
+                            color='var(--confirm)' height={30} width={100}
+                        />
 
-                        <ButtonContainer>
-                            <Button
-                                // onClick={(e) => handleSubmitRelease(e)}
-                                title='Atualizar'
-                                color='var(--confirm)' height={30} width={100}
-                            />
+                        <Link to='/fluxo-de-caixa'>
+                            <Button title='Cancelar' color='var(--cancel)' height={30} width={100} />
+                        </Link>
+                    </ButtonContainer>
+                </Form>
+            </Modal>
 
-                            <Link to='/fluxo-de-caixa'>
-                                <Button title='Cancelar' color='var(--cancel)' height={30} width={100} />
-                            </Link>
-                        </ButtonContainer>
-                    </Form>
-                </Modal>
-
-            </Content>
-        </Container>
+        </Content>
+        </Container >
     )
 }

@@ -66,4 +66,37 @@ export const UploadContainer = styled.div`
     padding: 4px;
     width: 100%;
     display: flex;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+
+    .file{
+        display: none;
+    }
+
+    span{
+        align-self: center;
+        margin-left: 10px;
+        text-align: center;
+        opacity: 0.7;
+    }
+`
+
+
+export const ThemeContainer = styled.div`
+    display: flex;
+    width: 100%;
+    
+`
+
+export const ThemeField = styled.div`
+    display: flex;
+    width: 100%;
+    padding: 10px;
+
+    input{
+        width: 20px;
+        margin-right: 6px;
+    }
+
 `

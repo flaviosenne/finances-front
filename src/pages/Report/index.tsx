@@ -57,12 +57,6 @@ export default function Report() {
 
 
     function handleFilter() {
-        console.log(dateStart)
-        console.log(dateEnd)
-        console.log(type)
-        console.log(status)
-        console.log(category)
-        console.log(bank)
     }
 
     return (

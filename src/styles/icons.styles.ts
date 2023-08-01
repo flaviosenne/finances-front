@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Email } from '@styled-icons/entypo/Email'
+import { Fullscreen } from '@styled-icons/bootstrap/Fullscreen'
 import { LockPassword } from '@styled-icons/remix-line/LockPassword'
 import { User } from '@styled-icons/boxicons-regular/User'
 import { EyeFill } from '@styled-icons/bootstrap/EyeFill'
@@ -107,5 +108,9 @@ ${iconCSS}
 `
 
 export const UploadIcon = styled(CloudUpload)`
+    ${iconCSS}
+`
+
+export const ThemeIcon = styled(Fullscreen)`
     ${iconCSS}
 `
